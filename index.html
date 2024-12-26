@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>book-easy.com</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Quicksand:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+  </head>
+  <body>
+    <div class="grid-container">
+      <!-- Working Hours -->
+      <div class="working-hours">
+        <span class="less-than">&lt;</span>Daily Live Chat
+        <strong>9:00 AM to 6:00 PM (Tokyo Time)</strong>
+        <span class="greater-than">&gt;</span>
+      </div>
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="logo">
+          <a href="#logo">book-easy.com</a>
+        </div>
+        <ul class="navlinks">
+          <li><a href="#about">WHY US</a></li>
+          <li><a href="#services">SERVICES</a></li>
+          <li><a href="#policies">PRICING &#x26; POLICIES</a></li>
+        </ul>
+      </nav>
+
+      <!-- Search Container -->
+      <div class="search-container">
+        <div class="tag-line">
+          <p class="slogan">Celebrating the Unique Dining Experience!</p>
+        </div>
+        <div class="search-widget">
+          <input type="text" placeholder="area" />
+          <input type="text" placeholder="category" />
+          <input type="text" placeholder="keyword" />
+          <button type="submit">SEARCH</button>
+        </div>
+      </div>
+      <!-- Recently Viewed Restaurants -->
+      <section class="restaurants">
+        <div class="scroll-container-top">
+          <h2>Recently Viewed Restaurants</h2>
+          <button id="viewAllBtn">View All</button>
+        </div>
+
+        <div class="scroll-container">
+          <button id="prevBtn">&lt;</button>
+          <div class="restaurant-cards" id="restaurantCards"></div>
+          <button id="nextBtn">&gt;</button>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="site-footer">
+        <p>&copy; 2025 Fuyuki Kitanishi. All rights reserved.</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+body{
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  background-color: #F5F5DC;
+}
+.grid-container{
+  display: grid;
+  grid-template-areas: 
+  "navbar"
+  "hours"
+  "search"
+  "restaurants"
+  "footer";
+  grid-template-rows: auto auto auto 1fr auto;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+ }
+ /* Place sections in grid area */
+ .navbar{
+  grid-row: 1;
+ }
+ .working-hours{
+  grid-row: 2;
+  text-align: center;
+  color:#465B32;
+  padding: 1em;
+  margin: 1em;
+ }
+
+ .search-container{
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #8B0000;
+  height: 200px;
+ }
+
+ .slogan{
+  font-family: 'Quicksand', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  grid-row: 1;
+  display: flex;
+ text-align: center;
+ justify-content: center;
+ align-items: center;
+ font-size: 3rem;
+ font-weight: 600;
+ color: #FFD700;
+ text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4); 
+ margin:0;
+ padding: 0;
+ }
+
+ .search-widget{
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0;
+  padding: 0;
+ }
+ .search-widget input{
+  padding: 15px 25px;
+  border-radius: 8px;
+  border: 1px solid #ddd; 
+  background-color: #FAF3E0;
+  border: none;
+ }
+ .search-widget button{
+  background-color: #F5F5DC;
+  color: #8B0000;
+  padding: 15px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+ 
+}
+.search-widget{
+  grid-column: span 4;
+  
+
+}
+ .restaurants{
+  grid-row: 4;
+  width: 100%;
+ }
+ .site-footer{
+  grid-row: 5;
+  text-align: center;
+  color:#5f6368;
+  padding: 10px;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+.navbar a{
+  text-decoration: none;
+  font-family: inherit; 
+  font-size: 1em;
+  color:#1C1C1C;
+  font-family: 'Noto Serif JP', serif;
+}
+.navbar ul{
+  margin: 30px 100px 30px 0;
+}
+
+.navbar ul a{
+  margin: 30px 30px 30px 0;
+}
+
+.logo a{
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 2.5rem;
+  font-weight: normal;
+  margin: 30px 0px 30px 100px;
+  color:#8B0000;
+  letter-spacing: 0.05em;
+}
+
+
+.restaurant-cards{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 20px;
+width: 100%;
+overflow: hidden;
+}
+
+.card{
+  width: 300px;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eee; 
+}
+
+.card img{
+width: 100%;
+height: 150px;
+object-fit: cover;
+}
+
+.card:hover{
+  transform: translateY(-10px);
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+}
+.card h3{
+  font-size: inherit;
+  font-family: 'Montserrat', serif;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ddd;
+  color: #8B0000;
+}
+
+.card .same-area,
+.card .same-category{
+  text-decoration: none;
+  color: inherit;
+}
+.card .area,
+.card .category{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+  color: #5f6368;
+}
+
+.card .same-area:hover,
+.card .same-category:hover{
+text-decoration: underline;
+color: #0056b3;
+}
+
