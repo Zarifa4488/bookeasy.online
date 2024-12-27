@@ -12,29 +12,33 @@ const nextBtn = document.getElementById("nextBtn");
 const cardWidth = 300; // Card width
 const gap = 20; // Space between cards
 const scrollAmount = cardWidth + gap; // Scroll amount per card
-
+// from here
 function renderRestaurants() {
   restaurants.forEach((restaurant) => {
     const card = document.createElement("div");
     card.classList.add("card");
 
+    // Add a wrapper for the card content
     card.innerHTML = `
-    <img src="${restaurant.image}" alt="${restaurant.name}" />
-    <h3>${restaurant.name}</h3>
-    <p class="area">
-      <span class="material-symbols-outlined">location_on</span>
-      <a href="#" class="same-area">${restaurant.area}</a>
-    </p>
-    <p class="category">
-      <span class="material-symbols-outlined">restaurant</span>
-      <a href="#" class="same-category">${restaurant.category}</a>
-    </p>
-    <p class="price"> ${restaurant.approxPrice}</p>
-  `;
+      <div class="card-content">
+        <img src="${restaurant.image}" alt="${restaurant.name}" />
+        <h3>${restaurant.name}</h3>
+        <p class="area">
+          <span class="material-symbols-outlined">location_on</span>
+          <a href="#" class="same-area">${restaurant.area}</a>
+        </p>
+        <p class="category">
+          <span class="material-symbols-outlined">restaurant</span>
+          <a href="#" class="same-category">${restaurant.category}</a>
+        </p>
+        <p class="price">${restaurant.approxPrice}</p>
+      </div>
+    `;
 
     restaurantContainer.appendChild(card);
   });
 }
+// Till here
 
 nextBtn.addEventListener("click", () => {
   restaurantContainer.scrollBy({
