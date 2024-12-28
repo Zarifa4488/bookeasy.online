@@ -108,13 +108,23 @@ body{
   border: none;
  }
  .search-widget button{
-  background-color: #F5F5DC;
+  background-color: #FFD700;
   color: #8B0000;
+  font-family: 'Montserrat', serif;
+  font-size: 1rem;
+  font-weight: 700;
   padding: 15px 25px;
+  border: 2px solid #8B0000;
   border-radius: 20px;
-  font-weight: bold;
-  border: none;
- 
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.search-widget button:hover{
+background-color: #8B0000;
+color: #FFD700;
+box-shadow: -4px 0px 8px #FFD700, 4px 0px 8px #FFD700;
+transform: translateY(-2px);
 }
 
 .restaurants, .scroll-container, .scroll-container-top{
@@ -151,8 +161,6 @@ body{
     align-content: end;
     margin: 0;
     padding: 0;
-    width: 100px;
-    height: auto;
    border-radius: 20px;
    border: 2px solid#8B0000;
    background-color:#8B0000;
@@ -160,7 +168,7 @@ body{
    font-family: 'Noto Serif JP', serif;
    font-size: 1em;
    font-weight: 700;
-   padding: 12px 24px;
+   padding: 10px 20px;
    width: auto;
    cursor: pointer;
    transition: all 0.3s ease;
@@ -168,7 +176,7 @@ body{
 
   .scroll-container-top button:hover{
     background-color: #FFD700;
-    color: #1C1C1C;
+    color: #8B0000;
     border: 2px solid #FFD700;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
