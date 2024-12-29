@@ -100,12 +100,48 @@ body{
   margin: 0;
   padding: 0;
  }
- .search-widget input{
-  padding: 15px 25px;
-  border-radius: 8px;
-  border: 1px solid #ddd; 
-  background-color: #FAF3E0;
-  border: none;
+ .input-group{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+ .icon{
+  position: absolute;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+  pointer-events: none;
+ }
+
+ .search-dropdown,
+ .keyword-input{
+  box-sizing: border-box;
+ }
+
+ .search-dropdown{
+  width: 100%;
+  padding: 15px 15px 15px 50px;
+  border: 2px solid #8B0000;
+  border-radius: 10px;
+  font-family:  'Montserrat', serif;
+  font-size: 1rem;
+  appearance: none;
+  background-color: #F5F5DC;
+  color: #5f6368;
+ }
+
+ .keyword-input{
+  width: 100%;
+  padding: 15px 15px 15px 50px;
+  border: 2px solid #8B0000;
+  border-radius: 10px;
+  background-color: #F5F5DC;
+ }
+ input::placeholder{
+  color: #5f6368;
+  font-size: 1rem;
+  font-family: 'Montserrat', serif;
  }
  .search-widget button{
   background-color: #FFD700;

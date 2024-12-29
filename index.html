@@ -51,10 +51,64 @@
           <p class="slogan">Celebrating the Unique Dining Experience!</p>
         </div>
         <div class="search-widget">
-          <input type="text" placeholder="area" />
-          <input type="text" placeholder="category" />
-          <input type="text" placeholder="keyword" />
-          <button type="submit">Search</button>
+          <!-- Area Dropdown -->
+          <div class="input-group">
+            <img
+              src="img.img/location-icon.png"
+              alt="location-icon"
+              class="icon"
+            />
+            <select
+              name="search-dropdown"
+              id="search-dropdown"
+              class="search-dropdown"
+            >
+              <option value="">Area</option>
+              <option value="hokkaido">Hokkaido</option>
+              <option value="tohoku">Tohoku</option>
+              <option value="kanto">Kanto</option>
+              <option value="chubu">Chubu</option>
+              <option value="kansai">Kansai</option>
+              <option value="chugoku">Chugoku</option>
+              <option value="shikoku">Shikoku</option>
+              <option value="kyushu">Kyushu</option>
+            </select>
+          </div>
+          <!-- Category Dropdown -->
+          <div class="input-group">
+            <img
+              src="img.img/restaurant-icon.png"
+              alt="restaurant-icon"
+              class="icon"
+            />
+            <select
+              name="search-dropdown"
+              id="search-dropdown"
+              class="search-dropdown"
+            >
+              <option value="">Category</option>
+              <option value="sushi">Sushi</option>
+              <option value="kaiseki">Kaiseki</option>
+              <option value="ramen">Ramen</option>
+              <option value="tenpura">Tempura</option>
+              <option value="yakitori">Yakitori</option>
+              <option value="soba">Soba</option>
+              <option value="okonomiyaki">Okonomiyaki</option>
+              <option value="teppanyaki">Teppanyaki</option>
+            </select>
+          </div>
+          <!-- Keyword Input -->
+          <div class="input-group">
+            <img
+              src="img.img/keyword-icon.png"
+              alt="keyword-icon"
+              class="icon"
+            />
+            <input type="text" class="keyword-input" placeholder="Keyword" />
+          </div>
+          <div class="input-group">
+            <button type="submit">Search</button>
+          </div>
         </div>
       </div>
       <!-- Recently Viewed Restaurants -->
