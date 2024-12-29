@@ -105,7 +105,8 @@ body{
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-}
+ }
+
  .icon{
   position: absolute;
   left: 15px;
@@ -137,11 +138,12 @@ body{
   border: 2px solid #8B0000;
   border-radius: 10px;
   background-color: #F5F5DC;
+  font-size: 1rem;
  }
  input::placeholder{
   color: #5f6368;
-  font-size: 1rem;
   font-family: 'Montserrat', serif;
+  font-size: 1rem;
  }
  .search-widget button{
   background-color: #FFD700;
