@@ -26,7 +26,18 @@
   --secondary-color: #5f6368; /* Secondary Text */
   --highlight-color: #FFD700; /* Highlights */
   --third-color: #8A9A5B; /* Earthy Olive Green */
+
+  /* Font Sizes */
+  --font-xxs: 0.75rem; /* Extra Extra Small */
+  --font-xs: 0.875rem; /* Extra Small */
+  --font-s: 1rem;      /* Small */
+  --font-m: 1.125rem;  /* Medium */
+  --font-l: 1.5rem;    /* Large */
+  --font-xl: 2rem;     /* Extra Large */
+  --font-xxl: 3rem;    /* Extra Extra Large */
 }
+
+
 *{
   box-sizing: border-box;
 }
@@ -34,7 +45,7 @@ body{
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 1rem;
+  font-size: var(--font-s);
   background-color: var(--primary-bg);
   
 }
@@ -82,6 +93,7 @@ body{
   .navbar ul a{
     display: inline-block;
     padding: var(--space-s);
+    font-size: var(--font-m);
     transition: transform 0.3s ease, color 0.3s ease;
   }
   .navbar ul a:hover{
@@ -91,7 +103,7 @@ body{
   
   .logo a{
     font-family: 'Fredoka One', sans-serif;
-    font-size: 2.5rem;
+    font-size: var(--font-xl);
     font-weight: normal;
     padding: var(--space-m);
     color:var(--accent-color);
@@ -126,7 +138,7 @@ body{
   font-family: 'Quicksand', sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
-  font-size: 3rem;
+  font-size: var(--font-xxl);
   font-style: normal;
   display: flex;
   text-align: center;
@@ -174,19 +186,19 @@ body{
   color: var(--secondary-color);
   appearance: none;
   font-family:  'Montserrat', serif;
-  font-size: 1rem;
+  font-size: var(--font-s);
  }
 
  input::placeholder{
   color: var(--secondary-color);
   font-family: 'Montserrat', serif;
-  font-size: 1rem;
+  font-size: var(--font-s);
  }
  .search-widget button{
   background-color: var(--highlight-color);
   color: var(--accent-color);
   font-family: 'Montserrat', serif;
-  font-size: 1rem;
+  font-size: var(--font-s);
   font-weight: 700;
   padding: var(--space-m) var(--space-xxl);
   border: 2px solid var(--accent-color);
@@ -235,7 +247,7 @@ transform: translateY(-2px);
   text-align: left;
   color: var(--primary-color);
   font-family: 'Noto Serif JP', serif;
-  font-size: 2rem;
+  font-size: var(--font-xl);
   font-weight: 700;
   padding: var(--space-s) var(--space-m);
 
@@ -247,7 +259,7 @@ transform: translateY(-2px);
    background-color:var(--accent-color);
    color: var(--primary-bg);
    font-family: 'Noto Serif JP', serif;
-   font-size: 1em;
+   font-size: var(--font-s);
    font-weight: 700;
    padding: var(--space-s) var(--space-m);
    width: auto;
@@ -311,7 +323,7 @@ transform: translateY(-2px);
     box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
   }
   .card h3{
-    font-size: 1rem;
+    font-size: var(--font-m);
     font-family: 'Montserrat', serif;
     font-weight: 700;
     text-align: center;
@@ -346,7 +358,7 @@ transform: translateY(-2px);
     justify-content: center;
     align-items: center;
     font-family: 'Montserrat', serif;
-    font-size: 1rem;
+    font-size: var(--font-s);
     font-weight: 700;
     color:var(--highlight-color);
     background-color: var(--accent-color);
@@ -399,7 +411,7 @@ transform: translateY(-2px);
   color: var(--primary-bg);
   padding: var(--space-xs) var(--space-s);
   border-radius: var(--space-xs);
-  font-size: 0.8rem;
+  font-size: var(--font-xxs);
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
