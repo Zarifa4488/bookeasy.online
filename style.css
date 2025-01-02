@@ -386,6 +386,31 @@ transform: translateY(-2px);
   padding: var(--space-m) var(--space-xl);
   gap: var(--space-xl);
 }
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-tracks: center;
+  gap: var(--space-xxl)
+}
+.contact-info p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xs);
+  cursor: pointer;
+}
+
+.contact-info p svg{
+  vertical-align: middle;
+  transition: transform 0.3s, fill 0.3s;
+}
+
+.contact-info p:hover svg{
+  transform: scale(1.2);
+  fill: var(--accent-color);
+}
 .social-media-icons{
   display: flex;
   justify-content: center;
@@ -400,6 +425,7 @@ transform: translateY(-2px);
 
 .social-media-icons a:hover svg{
   transform: scale(1.2);
+  fill: var(--accent-color);
 }
 
 .tooltip{
@@ -407,7 +433,7 @@ transform: translateY(-2px);
   bottom: calc(var(--space-xl));
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--secondary-color);
+  background-color: var(--accent-color);
   color: var(--primary-bg);
   padding: var(--space-xs) var(--space-s);
   border-radius: var(--space-xs);
