@@ -7,6 +7,8 @@
   --space-l: 24px;
   --space-xl: 32px;
   --space-xxl: 40px;
+  --space-xxxl: 48px;
+  --space-xxxxl: 56px;
 
   /* Max Widths */
   --content-max-width: 1200px;
@@ -225,6 +227,13 @@ transform: translateY(-2px);
   overflow: visible;
 }
 
+.scroll-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-s);
+}
+
 .restaurants{
   margin: 0;
   padding: 0;
@@ -291,12 +300,27 @@ transform: translateY(-2px);
   #nextBtn{
     background-color: var(--accent-color);
     color: var(--primary-bg);
-    height: calc(var)
-    width: var(--space-xxl);
-    border-radius: var(--font-l);
-    border-color: var(--accent-color);
+    height: var(--space-xxxxl);
+    width: var(--space-xxxxl);
+    border-radius: var(--space-xl);
+    border: 2px solid var(--accent-color);
     font-size: var(--font-l);
+    font-weight: 400;
+    padding: var(--space-s);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
   }
+
+  #prevBtn:hover, 
+  #nextBtn:hover{
+    background-color: var(--highlight-color);
+    color:var(--accent-color) ;
+    border: 2px solid var(--highlight-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+
   .restaurant-cards{
   display: flex;
   overflow-x: visible;
