@@ -25,7 +25,7 @@
   --accent-color: #8B0000; /* Accent */
   --secondary-color: #5f6368; /* Secondary Text */
   --highlight-color: #FFD700; /* Highlights */
-  --third-color: #8A9A5B; /* Earthy Olive Green */
+  --third-color: #4b5320;; /* Earthy Olive Green */
 
   /* Font Sizes */
   --font-xxs: 0.75rem; /* Extra Extra Small */
@@ -113,7 +113,11 @@ body{
   /* working hours styling */
  .working-hours{
   grid-area: hours;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  gap: var(--space-xs);
   color:var(--secondary-color);
   margin-bottom: var(--space-xl);
   color:var(--third-color);
@@ -137,13 +141,14 @@ body{
   grid-row: 1;
   font-family: 'Quicksand', sans-serif;
   font-optical-sizing: auto;
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--font-xxl);
   font-style: normal;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
+  padding: var(--space-s) var(--space-m);
   color: var(--highlight-color);
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4); 
  }
@@ -282,6 +287,16 @@ transform: translateY(-2px);
     position: relative;
   }
 
+  #prevBtn, 
+  #nextBtn{
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    height: calc(var)
+    width: var(--space-xxl);
+    border-radius: var(--font-l);
+    border-color: var(--accent-color);
+    font-size: var(--font-l);
+  }
   .restaurant-cards{
   display: flex;
   overflow-x: visible;
