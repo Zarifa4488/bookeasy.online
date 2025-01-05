@@ -189,7 +189,7 @@ body{
  .keyword-input{
   width: 100%;
   padding: var(--space-m) var(--space-xxl);
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--highlight-color);
   border-radius: var(--space-s);
   background-color: var(--primary-bg);
   color: var(--secondary-color);
