@@ -54,3 +54,48 @@ prevBtn.addEventListener("click", () => {
 
 // Render restaurant cards
 renderRestaurants();
+
+// Sample data for blogs
+const blogs = [
+  {
+    title: "Japanese Dining Etiquette",
+    description: "Discover the do's and don'ts of dining in Japan.",
+    image: "img.img/image1.jpg",
+    link: "#"
+  },
+  {
+    title: "Top 10 Sushi Spots",
+    description: "Explore the best sushi restaurants in Tokyo.",
+    image: "img.img/image2.jpg",
+    link: "#"
+  },
+  {
+    title: "Seasonal Japanese Foods",
+    description: "Learn about the seasonal dishes you must try.",
+    image: "img.img/image3.jpg",
+    link: "#"
+  }
+];
+
+// Function to render blogs dynamically
+function renderBlogs() {
+  const blogCardsContainer = document.getElementById("blogCardsContainer");
+
+  blogs.forEach(blog => {
+    // Create blog card
+    const blogCard = document.createElement("div");
+    blogCard.classList.add("blog-card");
+
+    blogCard.innerHTML = `
+      <img src="${blog.image}" alt="${blog.title}" />
+      <h3>${blog.title}</h3>
+      <p>${blog.description}</p>
+    `;
+
+    // Append blog card to container
+    blogCardsContainer.appendChild(blogCard);
+  });
+}
+
+// Call the function to render blogs on page load
+renderBlogs();

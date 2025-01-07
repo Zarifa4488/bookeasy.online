@@ -59,8 +59,9 @@ body{
   "hours"
   "search"
   "scroll-container"
+  "recent-blogs"
   "footer";
-  grid-template-rows: var(--header-height) auto auto 1fr var(--footer-height);
+  grid-template-rows: var(--header-height) auto auto 1fr auto var(--footer-height);
   grid-template-columns: 1fr;
   min-height: 100vh;
   margin: 0 auto;
@@ -423,6 +424,79 @@ transform: translateY(-2px);
 
   .card .price:hover{
     transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .recent-blogs{
+    grid-area: recent-blogs;
+    padding: var(--space-xl);
+    background-color: var(--primary-bg);
+    text-align: center;
+  }
+  .recent-blogs h2{
+    font-family: 'Noto Serif JP', serif;
+    font-size: var(--font-xl);
+    color: var(--primary-color);
+    margin-bottom: var(--space-l);
+  }
+  .blog-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-l);
+    margin-bottom: var(--space-l);
+  }
+
+  .blog-card{
+    background-color: var(--secondary-color);
+    border-radius: var(--space-m);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .blog-card img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  .blog-card h3{
+    font-family: 'Montserrat', serif;
+    font-size: var(--font-m);
+    color: var(--highlight-color);
+    margin: var(--font-s) var(--space-m);
+  }
+
+  .blog-card p{
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--font-s);
+    color: var(--primary-bg);
+    margin: 0 var(--space-m) var(--font-m);
+  }
+
+  .blog-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .more-btn{
+    background-color: var(--highlight-color);
+    color: var(--accent-color);
+    font-family: 'Montserrat', serif;
+    font-size: var(--font-s);
+    font-weight: 700;
+    padding: var(--space-m) var(--space-xl);
+    border: none;
+    border-radius: var(--space-l);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .more-btn:hover{
+    background-color: var(--accent-color);
+    color: var(--primary-bg);
+    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
