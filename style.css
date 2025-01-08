@@ -27,7 +27,8 @@
   --accent-color: #8B0000; /* Accent */
   --secondary-color: #5f6368; /* Secondary Text */
   --highlight-color: #FFD700; /* Highlights */
-  --third-color: #4b5320;; /* Earthy Olive Green */
+  --green-color: #4b5320;; /* Earthy Olive Green */
+  --neutral-beige: #E3DCC3; /* Neutral Beige */
 
   /* Font Sizes */
   --font-xxs: 0.75rem; /* Extra Extra Small */
@@ -143,9 +144,8 @@ body{
   align-items: center;
   text-align: center;
   gap: var(--space-xs);
-  color:var(--secondary-color);
   margin-bottom: var(--space-xl);
-  color:var(--third-color);
+  color: var(--green-color)
  }
 
  .search-container{
@@ -448,11 +448,12 @@ transform: translateY(-2px);
   }
 
   .blog-card{
-    background-color: var(--secondary-color);
+    background-color:var(--primary-bg);
     border-radius: var(--space-m);
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ddd;
     width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
@@ -464,20 +465,20 @@ transform: translateY(-2px);
   .blog-card h3{
     font-family: 'Montserrat', serif;
     font-size: var(--font-m);
-    color: var(--highlight-color);
+    color: var(--primary-color);
     margin: var(--font-s) var(--space-m);
   }
 
   .blog-card p{
     font-family: 'Roboto', sans-serif;
     font-size: var(--font-s);
-    color: var(--primary-bg);
+    color: var(--green-color);
     margin: 0 var(--space-m) var(--font-m);
   }
 
   .blog-card:hover{
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.08);
   }
 
   .more-btn{
