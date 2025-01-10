@@ -500,6 +500,29 @@ transform: translateY(-2px);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+
+  #chat-icon{
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scaleX(-1);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3 ease;
+  }
+
+  #chat-icon:hover{
+    transform: scale(1.1) scaleX(-1);
+  }
+
+  #chat-icon:hover path{
+    fill:var(--highlight-color);
+  }
   
 
  .site-footer{
