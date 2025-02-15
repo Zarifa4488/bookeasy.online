@@ -1,24 +1,38 @@
+// This is my restaurant's information. I will replace it with database once I finish studing the backend.
 const restaurants = [
+  { name: "Restaurant1", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
+  { name: "Restaurant2", area: "Shibuya, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
+  { name: "Restaurant3", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
+  { name: "Restaurant1", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
+  { name: "Restaurant2", area: "Shibuya, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
+  { name: "Restaurant3", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
+  { name: "Restaurant1", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
+  { name: "Restaurant2", area: "Shibuya, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
+  { name: "Restaurant3", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
   { name: "Restaurant1", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
   { name: "Restaurant2", area: "Shibuya, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
   { name: "Restaurant3", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" }
 ];
 
-const restaurantContainer = document.getElementById("restaurantCards");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
+const restaurantContainer = document.querySelector("#restaurantCards");
+const prevBtn = document.querySelector("#prevBtn");
+const nextBtn = document.querySelector("#nextBtn");
 
-const cardWidth = 300; // Card width
-const gap = 20; // Space between cards
-const scrollAmount = cardWidth + gap; // Scroll amount per card
 
-// Render restaurants without 'card-content' wrapper
+const cardWidth = 300; 
+const gap = 20; 
+const cardsToScroll = 3;
+const scrollAmount = (cardWidth + gap) * cardsToScroll; 
+
+
 function renderRestaurants() {
+
+  restaurantContainer.innerHTML = "";
+
   restaurants.forEach((restaurant) => {
     const card = document.createElement("div");
     card.classList.add("card");
 
-    // Directly add the content without 'card-content' wrapper
     card.innerHTML = `
       <img src="${restaurant.image}" alt="${restaurant.name}" />
       <h3>${restaurant.name}</h3>
@@ -32,12 +46,10 @@ function renderRestaurants() {
       </p>
       <p class="price">${restaurant.approxPrice}</p>
     `;
-
     restaurantContainer.appendChild(card);
   });
 }
 
-// Add scroll functionality to buttons
 nextBtn.addEventListener("click", () => {
   restaurantContainer.scrollBy({
     left: scrollAmount,
@@ -52,10 +64,9 @@ prevBtn.addEventListener("click", () => {
   });
 });
 
-// Render restaurant cards
 renderRestaurants();
 
-// Sample data for blogs
+
 const blogs = [
   {
     title: "Japanese Dining Etiquette",
@@ -79,10 +90,10 @@ const blogs = [
 
 // Function to render blogs dynamically
 function renderBlogs() {
-  const blogCardsContainer = document.getElementById("blogCardsContainer");
+  const blogCardsContainer = document.querySelector("#blogCardsContainer");
+ // Create blog card
 
   blogs.forEach(blog => {
-    // Create blog card
     const blogCard = document.createElement("div");
     blogCard.classList.add("blog-card");
 
