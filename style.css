@@ -57,12 +57,13 @@ body{
   display: grid;
   grid-template-areas: 
   "navbar"
+  "viewAllContainer"
   "hours"
   "search"
   "scroll-container"
   "recent-blogs"
   "footer";
-  grid-template-rows: var(--header-height) auto auto 1fr auto var(--footer-height);
+  grid-template-rows: var(--header-height) auto auto 1fr auto auto var(--footer-height);
   grid-template-columns: 1fr;
   min-height: 100vh;
   margin: 0 auto;
@@ -70,7 +71,6 @@ body{
   max-width: var(--content-max-width);
   background-color: var(--primary-bg);
  }
-
  /* navbar styling */
 
   .navbar{
@@ -419,6 +419,69 @@ transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
   }
+  .view-all-container{
+    grid-area: viewAllContainer;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr auto 1fr;
+    gap: var(--space-m);
+    display: none;
+  }
+  .view-all-container h2{
+    grid-row: 1;
+    display: flex;
+    justify-self: center;
+    color: var(--primary-color);
+    font-family: 'Noto Serif JP', serif;
+    font-size: var(--font-xl);
+    font-weight: 700;
+    padding: var(--space-s) var(--space-m);
+
+  }
+  .all-restaurants{
+    grid-row: 2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .view-all-container button{
+    grid-row: 3;
+    border-radius: var(--space-l);
+    border: 2px solid var(--accent-color);
+    background-color:var(--primary-color);
+    color: var(--primary-bg);
+    font-family: 'Noto Serif JP', serif;
+    font-size: var(--font-s);
+    font-weight: 700;
+    padding: var(--space-s) var(--space-m);
+    width: fit-content;
+    align-self: center;
+    justify-self: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .view-all-container button:hover{
+    background-color: var(--highlight-color);
+    color: var(--accent-color);
+    border: 2px solid var(--highlight-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
+
+  .hidden{
+    display: none !important;
+    visibility: hidden;
+    opacity: 0;
+    height: 0 !important;
+    overflow: hidden;
+  }
+
+  .show{
+    display: grid;
+  }
 
   .recent-blogs{
     grid-area: recent-blogs;
@@ -438,6 +501,8 @@ transform: translateY(-2px);
     align-items: center;
     gap: var(--space-l);
     margin-bottom: var(--space-l);
+    padding: var(--space-xl);
+    
   }
 
   .blog-card{
@@ -446,6 +511,7 @@ transform: translateY(-2px);
     overflow: hidden;
     border: 2px solid #ddd;
     width: 300px;
+    margin: var(--space-s);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }

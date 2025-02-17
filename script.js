@@ -13,21 +13,25 @@ const restaurants = [
   { name: "Restaurant2", area: "Shibuya, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
   { name: "Restaurant3", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" }
 ];
-
+// Select Elements
 const restaurantContainer = document.querySelector("#restaurantCards");
 const prevBtn = document.querySelector("#prevBtn");
 const nextBtn = document.querySelector("#nextBtn");
+const viewAllContainer = document.querySelector("#viewAllContainer");
+const allRestaurantsContainer = document.querySelector("#allRestaurants");
+const otherContainers = document.querySelectorAll("#workingHours,#searchContainer,#scrollContainer,#recentBlogs");
+const viewAllBtn = document.querySelector("#viewAllBtn");
+const showLessBtn = document.querySelector("#showLessBtn");
 
-
+// Constants for scroll functionality
 const cardWidth = 300; 
 const gap = 20; 
 const cardsToScroll = 3;
 const scrollAmount = (cardWidth + gap) * cardsToScroll; 
 
-
-function renderRestaurants() {
-
-  restaurantContainer.innerHTML = "";
+// Function to render restaurants dynamically
+function renderRestaurants(targetContainer) {
+ targetContainer.innerHTML = "";
 
   restaurants.forEach((restaurant) => {
     const card = document.createElement("div");
@@ -46,9 +50,16 @@ function renderRestaurants() {
       </p>
       <p class="price">${restaurant.approxPrice}</p>
     `;
-    restaurantContainer.appendChild(card);
+    targetContainer.appendChild(card);
+
+    console.log(" YESSSS I AM working!");
   });
 }
+
+// Initially render restaurants in scrolling section
+renderRestaurants(restaurantContainer);
+
+// Scroll functionality for prev and next Btns
 
 nextBtn.addEventListener("click", () => {
   restaurantContainer.scrollBy({
@@ -64,8 +75,56 @@ prevBtn.addEventListener("click", () => {
   });
 });
 
-renderRestaurants();
+// Ensure View All container and Show Less button start as hidden on page load
+viewAllContainer.classList.add("hidden");
+showLessBtn.classList.add("hidden");
 
+
+// Event Listener for View All Btn
+viewAllBtn.addEventListener("click", () => {
+  console.log("View All Button Clicked!");
+
+  if(viewAllContainer.classList.contains("hidden")){
+
+    viewAllContainer.classList.remove("hidden");
+    viewAllContainer.classList.add("show");
+
+    showLessBtn.classList.remove("hidden");
+
+    otherContainers.forEach(container => {
+      container.classList.add("hidden");
+    });
+
+    renderRestaurants(allRestaurantsContainer);
+  }else{
+    viewAllContainer.classList.add("hidden");
+    viewAllContainer.classList.remove("show");
+
+    showLessBtn.classList.add("hidden");
+
+    otherContainers.forEach(container => {
+      container.classList.remove("hidden");
+    });
+
+    console.log("Restaurants rendered successfully", allRestaurantsContainer.innerHTML);
+  }
+});
+
+
+// Show Less Button - Reset the Layout
+showLessBtn.addEventListener("click", () => {
+  console.log("Show less button clicked!");
+  
+  viewAllContainer.classList.add("hidden");
+    viewAllContainer.classList.remove("show");
+
+    otherContainers.forEach(container => {
+      container.classList.remove("hidden");
+    });
+});
+
+
+// Blog rendering Funftion
 
 const blogs = [
   {
