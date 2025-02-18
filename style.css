@@ -185,46 +185,93 @@ body{
   gap: var(--space-m);
   margin-bottom: var(--space-xxl);
  }
- .input-group{
+ /* General dropdown container styling */
+.custom-dropdown {
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: var(--space-s);
- }
-
- .icon{
-  position: absolute;
-  left: var(--space-s);
-  width: var(--space-l);
-  height:var(--space-l);
-  pointer-events: none;
- }
- .arrow-icon{
-  position: absolute;
-  right: var(--space-s);
-  width: var(--space-l);
-  height:var(--space-l);
-  pointer-events: none;
- }
-
- .search-dropdown,
- .keyword-input{
-  width: 100%;
-  padding: var(--space-m) var(--space-xxl);
-  border: none;
+  width: 200px; /* Adjust as needed */
+  background: var(--neutral-beige);
+  border: 1px solid var(--neutral-beige);
   border-radius: var(--space-s);
-  background-color: var(--primary-bg);
-  color: var(--secondary-color);
-  appearance: none;
-  font-family:  'Montserrat', serif;
-  font-size: var(--font-s);
- }
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  user-select: none;
+}
 
- input::placeholder{
-  color: var(--secondary-color);
-  font-family: 'Montserrat', serif;
+/* Header styling */
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-s) var(--space-m);
+  background: var(--primary-bg);
+  border-radius: var(--space-s);
   font-size: var(--font-s);
- }
+  color: var(--secondary-color);
+}
+
+/* Arrow icon */
+.arrow {
+  color: var(--secondary-color);
+  font-size: var(--font-m);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Dropdown list container */
+.dropdown-list {
+  display: none;
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  max-height: 120px;
+  background: var(--primary-bg);
+  border: 1px solid var(--primary-bg);
+  border-top: none;
+  border-radius: var(--space-s);
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Show dropdown when active */
+.custom-dropdown.active .dropdown-list {
+  max-height: 200px; /* Adjust as needed */
+  opacity: 1;
+  overflow-y: auto;
+}
+
+/* List item styling */
+.dropdown-list li {
+  font-size: var(--font-s);
+  color: var(--secondary-color);
+  padding: var(--space-s) var(--space-m);
+  cursor: pointer;
+  transition: background 0.2s;
+  
+}
+
+/* Hover effect */
+.dropdown-list li:hover {
+  background: var(--accent-color);
+}
+
+/* Add focus styles for accessibility */
+.dropdown-header:focus {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.custom-dropdown:focus-within .dropdown-list{
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
  .search-widget button{
   background-color: var(--highlight-color);
   color: var(--accent-color);

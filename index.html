@@ -69,63 +69,23 @@
           <p class="slogan">Reserve with Ease, Dine with Joy!</p>
         </div>
         <div class="search-widget">
-          <!-- Area Dropdown -->
-          <div class="input-group">
-            <img
-              src="img.img/location-icon.png"
-              alt="location-icon"
-              class="icon"
-            />
-            <select
-              name="area-dropdown"
-              id="area-dropdown"
-              class="search-dropdown"
-            >
-              <option value="">Area</option>
-              <option value="hokkaido">Hokkaido</option>
-              <option value="tohoku">Tohoku</option>
-              <option value="kanto">Kanto</option>
-              <option value="chubu">Chubu</option>
-              <option value="kansai">Kansai</option>
-              <option value="chugoku">Chugoku</option>
-              <option value="shikoku">Shikoku</option>
-              <option value="kyushu">Kyushu</option>
-            </select>
-            <img
-              src="img.img/arrow-icon.png"
-              alt="arrow-icon"
-              class="arrow-icon"
-            />
+          <!-- Custom Dropdown for Area -->
+          <div class="custom-dropdown" id="locationDropdown">
+            <div class="dropdown-header" tabindex="0">
+              <span class="selected-text">Select Location</span>
+              <span class="arrow">▼</span>
+            </div>
+            <ul class="dropdown-list"></ul>
           </div>
-          <!-- Category Dropdown -->
-          <div class="input-group">
-            <img
-              src="img.img/restaurant-icon.png"
-              alt="restaurant-icon"
-              class="icon"
-            />
-            <select
-              name="category-dropdown"
-              id="category-dropdown"
-              class="search-dropdown"
-            >
-              <option value="">Category</option>
-              <option value="sushi">Sushi</option>
-              <option value="kaiseki">Kaiseki</option>
-              <option value="ramen">Ramen</option>
-              <option value="tenpura">Tempura</option>
-              <option value="yakitori">Yakitori</option>
-              <option value="soba">Soba</option>
-              <option value="okonomiyaki">Okonomiyaki</option>
-              <option value="teppanyaki">Teppanyaki</option>
-            </select>
-            <img
-              src="img.img/arrow-icon.png"
-              alt="arrow-icon"
-              class="arrow-icon"
-            />
+          <!-- Custom Dropdown for Category -->
+          <div class="custom-dropdown" id="categoryDropdown">
+            <div class="dropdown-header" tabindex="0">
+              <span class="selected-text">Select Category</span>
+              <span class="arrow">▼</span>
+            </div>
+            <ul class="dropdown-list"></ul>
           </div>
-          <!-- Keyword Input -->
+          <!-- Keyword Input
           <div class="input-group">
             <img
               src="img.img/keyword-icon.png"
@@ -133,7 +93,7 @@
               class="icon"
             />
             <input type="text" class="keyword-input" placeholder="Keyword" />
-          </div>
+          </div> -->
           <div class="input-group">
             <button type="submit">Search</button>
           </div>

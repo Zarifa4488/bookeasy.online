@@ -3,16 +3,69 @@ const restaurants = [
   { name: "Restaurant1", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
   { name: "Restaurant2", area: "Shibuya, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
   { name: "Restaurant3", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
+  { name: "Restaurant1", area: "Sapporo, Hokkaido", category: "Yakitori", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
+  { name: "Restaurant2", area: "Ginza, Tokyo", category: "Okonomiyaki", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
+  { name: "Restaurant3", area: "Osaka, Kansai", category: "Tempura", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
   { name: "Restaurant1", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
   { name: "Restaurant2", area: "Shibuya, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Restaurant3", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
+  { name: "Restaurant3", area: "Gifu, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
   { name: "Restaurant1", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "Restaurant2", area: "Shibuya, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Restaurant3", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
-  { name: "Restaurant1", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "Restaurant2", area: "Shibuya, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Restaurant3", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" }
+  { name: "Restaurant2", area: "Harajuku, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
+  { name: "Restaurant3", area: "Kobe, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" }
 ];
+
+// Function to get unique values from an array of objects
+function getUniqueValues(array,key){
+  return[...new Set(array.map(item => item[key]))];
+}
+// Get unique locations and categories
+const uniqueLocations = getUniqueValues(restaurants,"area");
+const uniqueCategories = getUniqueValues(restaurants,"category");
+
+// Populate dropdown lists dynamically
+function populateDropdown(dropdownId,values){
+  const dropdown = document.querySelector(`#${dropdownId} .dropdown-list`);
+  dropdown.innerHTML = "";
+
+  values.forEach(value => {
+    const li = document.createElement("li");
+    li.textContent = value;
+    li.dataset.value = value;
+    dropdown.appendChild(li);
+    });
+}
+
+// Populate both dropdowns
+populateDropdown("locationDropdown",uniqueLocations);
+populateDropdown("categoryDropdown",uniqueCategories);
+
+
+// Activate custom dropdown behavior
+function activateDropdowns(){
+  const dropdowns = document.querySelectorAll(".custom-dropdown");
+
+  dropdowns.forEach(dropdown => {
+    const header = dropdown.querySelector(".dropdown-header");
+    const list = dropdown.querySelector(".dropdown-list");
+    const selectedText = dropdown.querySelector(".selected-text");
+    
+
+    header.addEventListener("click",() => {
+      dropdown.classList.toggle("active");
+    });
+
+    list.querySelectorAll("li").forEach(item => {
+      item.addEventListener("click", () => {
+        selectedText.innerText = item.innerText;
+        dropdown.classList.remove("active");
+      });
+    });
+  });
+}
+
+activateDropdowns();
+
+
 // Select Elements
 const restaurantContainer = document.querySelector("#restaurantCards");
 const prevBtn = document.querySelector("#prevBtn");
