@@ -9,6 +9,9 @@
   --space-xxl: 40px;
   --space-xxxl: 48px;
   --space-xxxxl: 56px;
+  --space-xxxxxl: 64px;
+  --space-xxxxxxl: 72px;
+  --space-xxxxxxxl: 80px;
 
   /* Max Widths */
   --content-max-width: 1200px;
@@ -22,23 +25,23 @@
   --footer-height: 300px;
 
   /* Colors */
-  --primary-bg: #FAF6F2; /* Background */
-  --primary-color: #683B2B; /* Text */
-  --accent-color: #DED1BD; /* Accent */
-  --secondary-color: #5f6368; /* Secondary Text */
-  --highlight-color: #B08401; /* Highlights */
-  --green-color: #4b5320;; /* Earthy Olive Green */
-  --neutral-beige: #E3DCC3; /* Neutral Beige */
+  --primary-bg: #FAF6F2; 
+  --primary-color: #683B2B; 
+  --accent-color: #DED1BD; 
+  --secondary-color: #5f6368; 
+  --highlight-color: #B08401; 
+  --green-color: #4b5320;; 
+  --neutral-beige: #E3DCC3; 
 
   /* Font Sizes */
-  --font-xxs: 0.75rem; /* Extra Extra Small */
-  --font-xs: 0.875rem; /* Extra Small */
-  --font-s: 1rem;      /* Small */
-  --font-m: 1.125rem;  /* Medium */
-  --font-l: 1.5rem;    /* Large */
-  --font-xl: 2rem;     /* Extra Large */
-  --font-xxl: 3rem;    /* Extra Extra Large */
-  --font-xxxl: 4rem;    /* Extra Extra Extra Large */
+  --font-xxs: 0.75rem; 
+  --font-xs: 0.875rem; 
+  --font-s: 1rem;      
+  --font-m: 1.125rem; 
+  --font-l: 1.5rem;   
+  --font-xl: 2rem;    
+  --font-xxl: 3rem;   
+  --font-xxxl: 4rem;    
 }
 
 
@@ -71,7 +74,6 @@ body{
   max-width: var(--content-max-width);
   background-color: var(--primary-bg);
  }
- /* navbar styling */
 
   .navbar{
     grid-area: navbar;
@@ -136,7 +138,7 @@ body{
     letter-spacing: 0.05em;
   }
 
-  /* working hours styling */
+ 
  .working-hours{
   grid-area: hours;
   display: flex;
@@ -157,7 +159,7 @@ body{
   align-items: center;
   text-align: center;
   background-color: var(--accent-color);
-  padding: var(--space-xl) var(--space-l);
+  padding: var(--space-xxxxxxxl) var(--space-l);
   margin-bottom: var(--space-xl);
   border-radius: var(--space-s);
  }
@@ -185,10 +187,10 @@ body{
   gap: var(--space-m);
   margin-bottom: var(--space-xxl);
  }
- /* General dropdown container styling */
+
 .custom-dropdown {
   position: relative;
-  width: 200px; /* Adjust as needed */
+  width: 200px; 
   background: var(--neutral-beige);
   border: 1px solid var(--neutral-beige);
   border-radius: var(--space-s);
@@ -197,37 +199,36 @@ body{
   user-select: none;
 }
 
-/* Header styling */
+
 .dropdown-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: var(--space-s) var(--space-m);
   background: var(--primary-bg);
-  border-radius: var(--space-s);
+  border-radius: var(--space-xs);
   font-size: var(--font-s);
   color: var(--secondary-color);
 }
 
-/* Arrow icon */
+
 .arrow {
   color: var(--secondary-color);
   font-size: var(--font-m);
   transition: transform 0.3s ease-in-out;
 }
 
-/* Dropdown list container */
 .dropdown-list {
   display: none;
   position: absolute;
-  top: -50px;
+  top: 100%;
   left: 0;
   width: 100%;
   max-height: 120px;
   background: var(--primary-bg);
   border: 1px solid var(--primary-bg);
   border-top: none;
-  border-radius: var(--space-s);
+  border-radius: var(--space-xs);
   overflow-y: auto;
   opacity: 0;
   transform: translateY(-5px);
@@ -239,14 +240,13 @@ body{
   text-align: left;
 }
 
-/* Show dropdown when active */
+
 .custom-dropdown.active .dropdown-list {
-  max-height: 200px; /* Adjust as needed */
+  max-height: 200px; 
   opacity: 1;
   overflow-y: auto;
 }
 
-/* List item styling */
 .dropdown-list li {
   font-size: var(--font-s);
   color: var(--secondary-color);
@@ -256,15 +256,18 @@ body{
   
 }
 
-/* Hover effect */
+
 .dropdown-list li:hover {
   background: var(--accent-color);
 }
 
-/* Add focus styles for accessibility */
 .dropdown-header:focus {
-  opacity: 0;
   transition: opacity 0.3s ease-in-out;
+}
+
+.custom-dropdown:focus-within {
+  border: 2px solid var(--highlight-color);
+  outline: none;
 }
 
 .custom-dropdown:focus-within .dropdown-list{
@@ -292,7 +295,6 @@ box-shadow: -4px 0px 8px var(--highlight-color), 4px 0px 8px var(--highlight-col
 transform: translateY(-2px);
 }
 
-/* scroll-container styling */
 
 
 .scroll-container{
