@@ -30,7 +30,7 @@
   --accent-color: #DED1BD; 
   --secondary-color: #5f6368; 
   --highlight-color: #B08401; 
-  --green-color: #4b5320;; 
+  --green-color: #4b5320;
   --neutral-beige: #E3DCC3; 
 
   /* Font Sizes */
@@ -199,7 +199,6 @@ body{
   user-select: none;
 }
 
-
 .dropdown-header {
   display: flex;
   justify-content: space-between;
@@ -207,8 +206,12 @@ body{
   padding: var(--space-s) var(--space-m);
   background: var(--primary-bg);
   border-radius: var(--space-xs);
-  font-size: var(--font-s);
+}
+
+ input::placeholder{
   color: var(--secondary-color);
+  font-family: 'Montserrat', serif;
+  font-size: var(--font-s);
 }
 
 
@@ -275,7 +278,7 @@ body{
   opacity: 1;
   transform: translateY(0);
 }
- .search-widget button{
+ #searchBtn{
   background-color: var(--highlight-color);
   color: var(--accent-color);
   font-family: 'Montserrat', serif;
@@ -288,7 +291,7 @@ body{
   transition: all 0.3s;
 }
 
-.search-widget button:hover{
+#searchBtn:hover{
 background-color: var(--accent-color);
 color: var(--highlight-color);
 box-shadow: -4px 0px 8px var(--highlight-color), 4px 0px 8px var(--highlight-color);
@@ -649,7 +652,7 @@ transform: translateY(-2px);
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-tracks: center;
+  align-items: center;
   gap: var(--space-xxl)
 }
 .contact-info p{
