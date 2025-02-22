@@ -208,12 +208,6 @@ body{
   border-radius: var(--space-xs);
 }
 
- input::placeholder{
-  color: var(--secondary-color);
-  font-family: 'Montserrat', serif;
-  font-size: var(--font-s);
-}
-
 
 .arrow {
   color: var(--secondary-color);
