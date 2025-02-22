@@ -220,12 +220,21 @@ body{
   font-size: var(--font-s);
  }
 
+<<<<<<< Updated upstream
  input::placeholder{
   color: var(--secondary-color);
   font-family: 'Montserrat', serif;
   font-size: var(--font-s);
  }
  .search-widget button{
+=======
+.custom-dropdown:focus-within .dropdown-list{
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+ #searchBtn{
+>>>>>>> Stashed changes
   background-color: var(--highlight-color);
   color: var(--accent-color);
   font-family: 'Montserrat', serif;
@@ -238,7 +247,7 @@ body{
   transition: all 0.3s;
 }
 
-.search-widget button:hover{
+#searchBtn:hover{
 background-color: var(--accent-color);
 color: var(--highlight-color);
 box-shadow: -4px 0px 8px var(--highlight-color), 4px 0px 8px var(--highlight-color);
