@@ -86,6 +86,55 @@ function activateDropdowns(){
 
 activateDropdowns();
 
+// keyword input functionality
+
+const container = document.querySelector("#keywordInputContainer");
+const field = document.querySelector("#inputField");
+const input = document.querySelector("#inputKeyword");
+const keywordDropdown = document.querySelector("#keywordDropdown");
+
+const samplekeywords = ["Pizza","Sushi","Burger","Pasta","Ramen","Tacos"];
+
+function populateKeywordDropdown(){
+  console.log("I am working");
+  keywordDropdown.innerHTML = "";
+
+  samplekeywords.forEach((keyword) => {
+    const li = document.createElement("li");
+
+    li.textContent = keyword;
+    li.classList.add("dropdown-item");
+    li.addEventListener("click",() => {
+      input.value = keyword;
+      keywordDropdown.classList.remove("show");
+    });
+    keywordDropdown.appendChild(li);
+  });
+
+  c
+}
+
+function activateKeywordDropdown(){
+  console.log("The dropdown is active");
+  container.addEventListener("click",()=>{
+    populateKeywordDropdown();
+    keywordDropdown.classList.toggle("show");
+  
+  });}
+
+  activateKeywordDropdown();
+
+  input.addEventListener("focus",function(){
+    this.style.transition = "color 0.3s ease";
+    this.style.color = "transparent";
+  });
+  input.addEventListener("blur",function(){
+    this.style.color = "";
+  });
+
+  console.log("I am runing till the end");
+
+
 
 // Scrollable Restaurant Cards
 const restaurantContainer = document.querySelector("#restaurantCards");
