@@ -60,25 +60,40 @@ function activateDropdowns(){
 
     header.addEventListener("click",(event)=>{
       event.stopPropagation();
+
+
+      dropdowns.forEach(d =>{
+        if(d !== dropdown){
+          d.classList.remove("active");
+          d.querySelector(".dropdown-list").classList.remove("show");
+        }
+      });
+
+      dropdown.classList.toggle("active");
       list.classList.toggle("show");
     });
 
-    list.addEventListener("click",(event) =>{
 
+
+
+    list.addEventListener("click",(event) =>{
       event.stopPropagation();
       const clickedItem = event.target;
 
       if(clickedItem.tagName === "LI"){
         console.log("I am working");
         selectedText.textContent = clickedItem.textContent;
+        selectedText.style.color = "var(--secondary-color)";
         console.log("🔍 Updated text should be:", selectedText.textContent);
         list.classList.remove("show");
+        dropdown.classList.remove("active");
       }
     });
 
     document.addEventListener("click",(event)=>{
       if(!dropdown.contains(event.target)){
         list.classList.remove("show");
+        dropdown.classList.remove("active");
       }
     });
   });
@@ -111,7 +126,13 @@ function populateKeywordDropdown(){
     keywordDropdown.appendChild(li);
   });
 
-  c
+  document.addEventListener("click",(event)=>{
+    if(!container.contains(event.target)){
+      keywordDropdown.classList.remove("show");
+      input.placeholder = "Type a keyword..."
+    }
+  });
+
 }
 
 function activateKeywordDropdown(){
