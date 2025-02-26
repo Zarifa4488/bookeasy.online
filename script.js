@@ -34,6 +34,9 @@ function populateDropdown(dropdownId, values) {
   const dropdown = document.querySelector(`#${dropdownId} .dropdown-list`);
   dropdown.innerHTML = ""; 
 
+  dropdown.style.maxHeight = "120px";
+  dropdown.style.overflowY = "auto";
+
   values.forEach(value => {
     const li = document.createElement("li");
     li.textContent = value;
@@ -113,6 +116,9 @@ const samplekeywords = ["Pizza","Sushi","Burger","Pasta","Ramen","Tacos"];
 function populateKeywordDropdown(){
   console.log("I am working");
   keywordDropdown.innerHTML = "";
+
+  keywordDropdown.style.maxHeight = "120px";
+  keywordDropdown.style.overflowY = "auto";
 
   samplekeywords.forEach((keyword) => {
     const li = document.createElement("li");
