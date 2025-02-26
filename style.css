@@ -586,6 +586,7 @@ transform: translateY(-2px);
 
   .view-all-container button{
     grid-row: 3;
+    display: block;
     border-radius: var(--space-l);
     border: 2px solid var(--accent-color);
     background-color:var(--primary-color);
