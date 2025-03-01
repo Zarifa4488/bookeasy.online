@@ -14,7 +14,7 @@ const restaurants = [
   { name: "Restaurant3", area: "Osaka, Kansai", category: "Tempura", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" }
 ];
 
-
+// Search widget functionality
 function getUniqueValues(array, key) {
   return [...new Set(array.map(item => item[key]))];
 }
@@ -25,8 +25,6 @@ const uniqueCategories = getUniqueValues(restaurants, "category");
 
 console.log("Unique Locations:", uniqueLocations);
 console.log("Unique Categories:", uniqueCategories);
-
-
 
 
 
@@ -104,8 +102,6 @@ function activateDropdowns(){
 
 activateDropdowns();
 
-// keyword input functionality
-
 const container = document.querySelector("#keywordInputContainer");
 const field = document.querySelector("#inputField");
 const input = document.querySelector("#inputKeyword");
@@ -163,18 +159,16 @@ function activateKeywordDropdown(){
 
 
 
-// Scrollable Restaurant Cards
+// Recently viewed restaurants functionality
 const restaurantContainer = document.querySelector("#restaurantCards");
 const prevBtn = document.querySelector("#prevBtn");
 const nextBtn = document.querySelector("#nextBtn");
 
-// Constants for scroll functionality
 const cardWidth = 300; 
 const gap = 20; 
 const cardsToScroll = 3;
 const scrollAmount = (cardWidth + gap) * cardsToScroll; 
 
-// Function to render restaurants dynamically
 function renderRestaurants(targetContainer) {
   targetContainer.innerHTML = "";
 
@@ -199,10 +193,8 @@ function renderRestaurants(targetContainer) {
   });
 }
 
-// Initially render restaurants in scrolling section
 renderRestaurants(restaurantContainer);
 
-// Scroll functionality for prev and next Btns
 nextBtn.addEventListener("click", () => {
   restaurantContainer.scrollBy({
     left: scrollAmount,
@@ -224,11 +216,9 @@ const otherContainers = document.querySelectorAll("#workingHours,#searchContaine
 const viewAllBtn = document.querySelector("#viewAllBtn");
 const showLessBtn = document.querySelector("#showLessBtn");
 
-// Ensure View All container and Show Less button start as hidden on page load
 viewAllContainer.classList.add("hidden");
 showLessBtn.classList.add("hidden");
 
-// Event Listener for View All Btn
 viewAllBtn.addEventListener("click", () => {
   if (viewAllContainer.classList.contains("hidden")) {
     viewAllContainer.classList.remove("hidden");
@@ -253,7 +243,6 @@ viewAllBtn.addEventListener("click", () => {
   }
 });
 
-// Show Less Button - Reset the Layout
 showLessBtn.addEventListener("click", () => {
   viewAllContainer.classList.add("hidden");
   viewAllContainer.classList.remove("show");
@@ -263,8 +252,44 @@ showLessBtn.addEventListener("click", () => {
   });
 });
 
-// Blog rendering Function
+// Blogs functionality
 const blogs = [
+  {
+    title: "Japanese Dining Etiquette",
+    description: "Discover the do's and don'ts of dining in Japan.",
+    image: "img.img/image1.jpg",
+    link: "#"
+  },
+  {
+    title: "Top 10 Sushi Spots",
+    description: "Explore the best sushi restaurants in Tokyo.",
+    image: "img.img/image2.jpg",
+    link: "#"
+  },
+  {
+    title: "Seasonal Japanese Foods",
+    description: "Learn about the seasonal dishes you must try.",
+    image: "img.img/image3.jpg",
+    link: "#"
+  },
+  {
+    title: "Japanese Dining Etiquette",
+    description: "Discover the do's and don'ts of dining in Japan.",
+    image: "img.img/image1.jpg",
+    link: "#"
+  },
+  {
+    title: "Top 10 Sushi Spots",
+    description: "Explore the best sushi restaurants in Tokyo.",
+    image: "img.img/image2.jpg",
+    link: "#"
+  },
+  {
+    title: "Seasonal Japanese Foods",
+    description: "Learn about the seasonal dishes you must try.",
+    image: "img.img/image3.jpg",
+    link: "#"
+  },
   {
     title: "Japanese Dining Etiquette",
     description: "Discover the do's and don'ts of dining in Japan.",
@@ -285,12 +310,25 @@ const blogs = [
   }
 ];
 
-// Function to render blogs dynamically
-function renderBlogs() {
-  const blogCardsContainer = document.querySelector("#blogCardsContainer");
-  blogCardsContainer.innerHTML = ""; // Clears existing blog cards
 
-  blogs.forEach(blog => {
+const moreContainer = document.querySelector("#moreContainer");
+const blogCardsContainer = document.querySelector("#blogCardsContainer"); // Fixed ID
+const moreBtn = document.querySelector(".more-btn");
+const lessBtn = document.querySelector("#lessBtn");
+
+
+function renderBlogs(container, count = blogs.length) {
+  console.log("Blogs running");
+  const blogContainer = container.id==="blogCardsContainer" ? container:container.querySelector("#allBlogs");
+
+  if (!blogContainer) {
+    console.error("allBlogs container not found inside", container);
+    return;
+  }
+
+blogContainer.innerHTML = "";
+
+  blogs.slice(0,count).forEach(blog => {
     const blogCard = document.createElement("div");
     blogCard.classList.add("blog-card");
 
@@ -300,9 +338,68 @@ function renderBlogs() {
       <p>${blog.description}</p>
     `;
 
-    blogCardsContainer.appendChild(blogCard);
+    blogContainer.appendChild(blogCard);
   });
 }
+console.log("Blog Cards Container:", blogCardsContainer);
+renderBlogs(document.querySelector("#blogCardsContainer"),3);
 
-// Call the function to render blogs on page load
-renderBlogs();
+
+
+// More Button functionality
+
+moreContainer.classList.add("hidden");
+moreContainer.classList.remove("show");
+
+moreBtn.addEventListener("click", () => {
+  console.log("blogs running here too");
+  if (moreContainer.classList.contains("hidden")) {
+    console.log("yessss");
+    moreContainer.classList.remove("hidden");
+    moreContainer.classList.add("show");
+
+    lessBtn.classList.remove("hidden");
+    console.log("Less button should be visible now:", lessBtn);
+    lessBtn.classList.add("show");
+
+    console.log("Less button should be visible here too now:", lessBtn);
+
+    otherContainers.forEach(container => {
+      console.log("yess 22")
+      container.classList.add("hidden");
+    });
+
+    renderBlogs(moreContainer); 
+    console.log("I am running hahaahha")
+  } else {
+    console.log("is it me???")
+    moreContainer.classList.remove("show");
+    moreContainer.classList.add("hidden");
+
+    lessBtn.classList.add("hidden"); 
+
+    otherContainers.forEach(container => {
+      console.log("came till here")
+      container.classList.remove("hidden");
+    });
+    console.log("Blog Cards Container:", blogCardsContainer);
+    renderBlogs(blogCardsContainer,3); 
+  }
+  console.log("still hereeeeee")
+});
+
+lessBtn.addEventListener("click", () => {
+
+  console.log("I am less button I am working");
+  moreContainer.classList.add("hidden");
+  moreContainer.classList.remove("show");
+
+  lessBtn.classList.add("hidden");
+  moreBtn.classList.remove("hidden"); 
+
+
+  otherContainers.forEach(container => {
+    container.classList.remove("hidden");
+  });
+  renderBlogs(blogCardsContainer, 3);
+});
