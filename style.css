@@ -32,6 +32,7 @@
   --highlight-color: #B08401; 
   --green-color: #4b5320;
   --neutral-beige: #E3DCC3; 
+  --neutral-pink:#D49E8D;
 
   /* Font Sizes */
   --font-xxs: 0.75rem; 
@@ -112,27 +113,25 @@ body{
     transform: translateY(-2px);
   }
 
-  .navlinks li:last-child a{
-    position: relative;
-    transition: color 0.3s ease;
+
+  #shareBtn{
+    display: inline-block;
+    background-color: var(--neutral-pink);
+    color: var(--primary-color);
+    border-radius: var(--space-l);
+    padding: var(--space-s) var(--space-l);
+    font-size: var(--font-s);
+    font-family: 'Fredoka One', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, var(--green-color)0.3s ease;
   }
 
-  .navlinks li:last-child a::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
+
+  #shareBtn:hover{
+    background-color: #A67865;
+    color: #EADDD7;
   }
 
- .navlinks li:last-child a:hover::after{
-  width: 100%;
- 
- }
-  
   .logo a{
     font-family: 'Fredoka One', sans-serif;
     font-size: var(--font-xl);
