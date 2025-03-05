@@ -1,5 +1,6 @@
 :root {
   /* Spacing */
+  --space3xs:2px;
   --space-xxs: 4px;
   --space-xs: 8px;
   --space-s: 12px;
@@ -33,6 +34,8 @@
   --green-color: #4b5320;
   --neutral-beige: #E3DCC3; 
   --neutral-pink:#D49E8D;
+  --darker-pink:#A67865;
+  --ligther-beige:#EADDD7;
 
   /* Font Sizes */
   --font-xxs: 0.75rem; 
@@ -123,13 +126,13 @@ body{
     font-size: var(--font-s);
     font-family: 'Fredoka One', sans-serif;
     cursor: pointer;
-    transition: background-color 0.3s ease, var(--green-color)0.3s ease;
+    transition: background-color 0.2s ease, color var(--green-color)0.2s ease;
   }
 
 
   #shareBtn:hover{
-    background-color: #A67865;
-    color: #EADDD7;
+    background-color:var(--darker-pink);
+    color: var(--ligther-beige);
   }
 
   .logo a{
@@ -211,9 +214,30 @@ body{
   border-radius: var(--space-xs);
 }
 
+.arrow svg, .clear-btn svg{
+  width: 15px;
+  height: 15px;
+}
+
 .custom-dropdown .arrow {
   color: var(--secondary-color);
   font-size: var(--font-m);
+}
+
+.custom-dropdown .clear-btn{
+  display: none;
+  cursor: pointer;
+  color: var(--secondary-color);
+  font-size: var(--font-m);
+  margin-left: auto;
+}
+
+.custom-dropdown.selected .arrow{
+  display: none;
+}
+
+.custom-dropdown.selected .clear-btn{
+  display: inline-block;
 }
 
 .selected-text{
@@ -280,6 +304,8 @@ body{
   opacity: 1;
   transform: translateY(0);
 }
+
+
 
 .keyword-input-container{
   display: flex;
@@ -385,6 +411,14 @@ background-color: var(--accent-color);
 color: var(--highlight-color);
 box-shadow: -4px 0px 8px var(--highlight-color), 4px 0px 8px var(--highlight-color);
 transform: translateY(-2px);
+}
+
+#noResults{
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-align: center;
+  font-size: var(--font-xl);
+  margin: 0 auto;
 }
 
 
