@@ -1,30 +1,28 @@
 // This is my restaurant's information. I will replace it with a database once I finish studying the backend.
 const restaurants = [
-  { name: "Restaurant1", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "Restaurant2", area: "Shibuya, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Restaurant3", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
-  { name: "Restaurant1", area: "Sapporo, Hokkaido", category: "Yakitori", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "Restaurant2", area: "Ginza, Tokyo", category: "Okonomiyaki", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Restaurant3", area: "Osaka, Kansai", category: "Tempura", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
-  { name: "Restaurant1", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "Restaurant2", area: "Shibuya, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Restaurant3", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
-  { name: "Restaurant1", area: "Sapporo, Hokkaido", category: "Yakitori", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "Restaurant2", area: "Ginza, Tokyo", category: "Okonomiyaki", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Restaurant3", area: "Osaka, Kansai", category: "Tempura", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" }
+  { name: "Shima", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
+  { name: "ESquISSE", area: "Shibuya, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
+  { name: "Tenyu", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
+  { name: "Kuma 3", area: "Sapporo, Hokkaido", category: "Yakitori", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
+  { name: "Torizen", area: "Ginza, Tokyo", category: "Okonomiyaki", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
+  { name: "Fucha Bon", area: "Osaka, Kansai", category: "Tempura", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
+  { name: "Tomidokoro", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
+  { name: "Sushi Shigeru", area: "Shibuya, Tokyo", category: "Sushi", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
+  { name: "Sushi Dokoro", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
+  { name: "ishibashi", area: "Sapporo, Hokkaido", category: "Yakitori", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
+  { name: "Sushi Kuni", area: "Ginza, Tokyo", category: "Sushi", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
+  { name: "Imari", area: "Osaka, Kansai", category: "Tempura", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" }
 ];
 
-// Search widget functionality
 function getUniqueValues(array, key) {
-  return [...new Set(array.map(item => item[key]))];
+  return [...new Set(array.map(object => object[key]))];
 }
 
 const uniqueLocations = getUniqueValues(restaurants, "area");
 const uniqueCategories = getUniqueValues(restaurants, "category");
 
 
-console.log("Unique Locations:", uniqueLocations);
-console.log("Unique Categories:", uniqueCategories);
+// Got unique values from restaurants array and saved them to uniqueLocations and uniqueCategories.
 
 
 
@@ -49,6 +47,9 @@ function populateDropdown(dropdownId, values) {
     populateDropdown("categoryDropdown", uniqueCategories);
 
 
+    // Gave each uniqueLocations and each uniqueCategories values to li s which appended to each dropdown.
+
+
 function activateDropdowns(){
 
   const dropdowns = document.querySelectorAll(".custom-dropdown");
@@ -57,7 +58,9 @@ function activateDropdowns(){
     const header = dropdown.querySelector(".dropdown-header");
     const list = dropdown.querySelector(".dropdown-list");
     const selectedText = dropdown.querySelector(".selected-text");
-  
+    const clearBtn = dropdown.querySelector(".clear-btn");
+
+    const defaultText = selectedText.textContent;  
 
     header.addEventListener("click",(event)=>{
       event.stopPropagation();
@@ -74,21 +77,42 @@ function activateDropdowns(){
       list.classList.toggle("show");
     });
 
-
-
-
     list.addEventListener("click",(event) =>{
       event.stopPropagation();
       const clickedItem = event.target;
 
       if(clickedItem.tagName === "LI"){
-        console.log("I am working");
         selectedText.textContent = clickedItem.textContent;
-        selectedText.style.color = "var(--secondary-color)";
-        console.log("🔍 Updated text should be:", selectedText.textContent);
-        list.classList.remove("show");
-        dropdown.classList.remove("active");
+        dropdown.classList.add("selected");
+
+        dropdowns.forEach(dropdown=>{
+          list.classList.remove("show");
+          dropdown.classList.remove("active");
+        });
+
+        clearBtn.style.display = "inline-block";
       }
+    });
+
+    clearBtn.addEventListener("click", (event) => {
+      event.stopPropagation(); 
+    
+      
+      dropdown.classList.remove("selected"); 
+      selectedText.textContent = defaultText; 
+      clearBtn.style.display = "none"; 
+
+      // dropdowns.forEach(dropdown =>{
+        list.classList.remove("show"); 
+        dropdown.classList.remove("active"); 
+      // })
+
+      header.style.pointerEvents = "none";
+
+      setTimeout(()=>{
+        header.style.pointerEvents = "auto";
+      },300);
+      
     });
 
     document.addEventListener("click",(event)=>{
@@ -101,6 +125,8 @@ function activateDropdowns(){
 }
 
 activateDropdowns();
+
+
 
 const container = document.querySelector("#keywordInputContainer");
 const field = document.querySelector("#inputField");
@@ -148,15 +174,70 @@ function activateKeywordDropdown(){
   activateKeywordDropdown();
 
   input.addEventListener("focus",function(){
-    this.style.transition = "color 0.3s ease";
-    this.style.color = "transparent";
+    this.placeholder = "";
   });
   input.addEventListener("blur",function(){
-    this.style.color = "";
+    this.style.color = "Type a keyword...";
   });
 
   console.log("I am runing till the end");
 
+// Search button functionality
+
+document.querySelector("#searchBtn").addEventListener("click",function() {
+
+  console.log("Search Button is working");
+
+  let selectedLocation = document.querySelector("#locationDropdown .selected-text").textContent;
+  if(selectedLocation === "Select Location") selectedLocation = "";
+
+
+  let selectedCategory = document.querySelector("#categoryDropdown .selected-text").textContent;
+  if(selectedCategory === "Select Category") selectedCategory = "";
+
+  let keyword = document.querySelector("#inputKeyword").value.trim().toLowerCase(); 
+
+  let filterRestaurants = restaurants.filter(restaurant => {
+    let matchesLocation = selectedLocation ? restaurant.area === selectedLocation : true;
+    let matchesCategory = selectedCategory ? restaurant.category === selectedCategory : true;
+    let matchesKeyword = keyword 
+    ? (restaurant.name.toLowerCase().includes(keyword)||
+       restaurant.category.toLowerCase().includes(keyword)||
+       restaurant.area.toLowerCase().includes(keyword)) 
+       : true;
+    return matchesLocation && matchesCategory && matchesKeyword;
+  });
+
+  updateRestaurantDisplay(filterRestaurants);
+
+});
+
+function updateRestaurantDisplay(filterRestaurants){
+
+  console.log("this function is working too");
+
+  let container = document.querySelector("#restaurantCards");
+  container.innerHTML = "";
+
+  if (filterRestaurants.length === 0){
+    container.innerHTML = `<p id = "noResults" >No matching restaurants found.<p>`;
+    return;
+  }
+  filterRestaurants.forEach(restaurant => {
+    let card = document.createElement("div");
+    card.classList.add ("card");
+    card.innerHTML = `
+    <img src="${restaurant.image}" alt="${restaurant.name}" />
+              <h3>${restaurant.name}</h3>
+              <p class="area"><span class="material-symbols-outlined">location_on</span> ${restaurant.area}</p>
+              <p class="category"><span class="material-symbols-outlined">restaurant</span> ${restaurant.category}</p>
+              <p class="price">${restaurant.approxPrice}</p>
+    `;
+    container.appendChild(card);
+  });
+}
+
+console.log("I am working till the end");
 
 
 // Recently viewed restaurants functionality
