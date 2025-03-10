@@ -51,6 +51,8 @@
 
 *{
   box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
 body{
   font-family: "Roboto", sans-serif;
@@ -199,7 +201,6 @@ body{
   width: 200px; 
   background: var(--neutral-beige);
   border: 1px solid var(--neutral-beige);
-  border-radius: var(--space-s);
   cursor: pointer;
   font-family: Arial, sans-serif;
   user-select: none;
@@ -207,19 +208,21 @@ body{
 
 .dropdown-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: var(--space-s) var(--space-m);
   background: var(--primary-bg);
-  border-radius: var(--space-xs);
+  border-bottom: 0.5px solid #DED1BD;
+}
+
+.header-wrapper{
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .arrow svg, .clear-btn svg{
   width: 15px;
   height: 15px;
-}
-
-.custom-dropdown .arrow {
   color: var(--secondary-color);
   font-size: var(--font-m);
 }
@@ -227,23 +230,12 @@ body{
 .custom-dropdown .clear-btn{
   display: none;
   cursor: pointer;
-  color: var(--secondary-color);
-  font-size: var(--font-m);
-  margin-left: auto;
-}
-
-.custom-dropdown.selected .arrow{
-  display: none;
-}
-
-.custom-dropdown.selected .clear-btn{
-  display: inline-block;
 }
 
 .selected-text{
   color: var(--secondary-color);
   font-size: var(--font-s);
-  transition: transform 0.3s ease-in-out;
+  font-style: italic;
 }
 
 .dropdown-list{
@@ -255,23 +247,17 @@ body{
   max-height: 120px;
   background: var(--primary-bg);
   border: 1px solid var(--primary-bg);
-  border-top: none;
-  border-radius: var(--space-xs);
+  border-bottom: 0.5px solid #DED1BD;
   overflow-y: auto;
-  opacity: 0;
-  transform: translateY(-5px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 1000;
   list-style: none;
-  margin: 0;
-  padding: 0;
   text-align: left;
 }
 
 
 .custom-dropdown.active .dropdown-list {
   max-height: 200px; 
-  opacity: 1;
+  display:block;
   overflow-y: auto;
 }
 
@@ -281,30 +267,16 @@ body{
   padding: var(--space-s) var(--space-m);
   cursor: pointer;
   transition: background 0.2s;
-  
+  border-bottom: 0.5px solid #DED1BD;
 }
-
 
 .dropdown-list li:hover {
   background: var(--accent-color);
 }
 
-.dropdown-header:focus {
-  transition: opacity 0.3s ease-in-out;
-}
-
-
 .custom-dropdown:focus-within {
-  border: 2px solid var(--highlight-color);
   outline: none;
 }
-
-.custom-dropdown:focus-within .dropdown-list{
-  display: block;
-  opacity: 1;
-  transform: translateY(0);
-}
-
 
 
 .keyword-input-container{
@@ -313,7 +285,6 @@ body{
   width: 200px; 
   background: var(--neutral-beige);
   border: 1px solid var(--neutral-beige);
-  border-radius: var(--space-s);
   cursor: pointer;
   font-family: Arial, sans-serif;
   user-select: none;
@@ -321,14 +292,15 @@ body{
 
 .input-field{
   display: flex;
+  flex-grow: 1;
   justify-content: space-between;
   align-items: center;
   padding: var(--space-s) var(--space-m);
   background: var(--primary-bg);
-  border-radius: var(--space-xs);
   font-family: Arial, sans-serif;
   width: 200px;
   height: 45px;
+  border-bottom: 0.5px solid #DED1BD;
 }
 
 .keyword-input{
@@ -344,48 +316,7 @@ body{
 }
 
 .input-field:focus-within {
-  border: 2px solid var(--highlight-color);
-}
-
-.keyword-dropdown{
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  max-height: 120px;
-  background: var(--primary-bg);
-  border: 1px solid var(--primary-bg);
-  border-top: none;
-  border-radius: var(--space-xs);
-  overflow-y: auto;
-  opacity: 0;
-  transform: translateY(-5px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 1000;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  font-size: var(--font-s);
-}
-
-.keyword-input-container.active .keyword-dropdown {
-  max-height: 200px; 
-  opacity: 1;
-  overflow-y: auto;
-}
-
-.dropdown-item{
-  font-size: var(--font-s);
-  color: var(--secondary-color);
-  padding: var(--space-s) var(--space-m);
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.dropdown-item:hover{
-  background: var(--accent-color);
+  outline:none;
 }
 
 .keyword-input::placeholder{
