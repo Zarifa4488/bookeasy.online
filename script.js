@@ -40,153 +40,78 @@ function populateDropdown(dropdownId, values) {
 
     dropdown.appendChild(li);
   });
-
 }
-
     populateDropdown("locationDropdown", uniqueLocations);
     populateDropdown("categoryDropdown", uniqueCategories);
 
 
-    // Gave each uniqueLocations and each uniqueCategories values to li s which appended to each dropdown.
+    document.querySelectorAll(".custom-dropdown").forEach(dropdown =>{
+      dropdown.addEventListener("click",function(){
+        this.classList.toggle("active");
+      });
+    });
 
-
-function activateDropdowns(){
-
-  const dropdowns = document.querySelectorAll(".custom-dropdown");
-
-  dropdowns.forEach(dropdown => {
-    const header = dropdown.querySelector(".dropdown-header");
-    const list = dropdown.querySelector(".dropdown-list");
-    const selectedText = dropdown.querySelector(".selected-text");
-    const clearBtn = dropdown.querySelector(".clear-btn");
-
-    const defaultText = selectedText.textContent;  
-
-    header.addEventListener("click",(event)=>{
-      event.stopPropagation();
-
-
-      dropdowns.forEach(d =>{
-        if(d !== dropdown){
-          d.classList.remove("active");
-          d.querySelector(".dropdown-list").classList.remove("show");
+    document.addEventListener("click",function(event){
+      document.querySelectorAll(".custom-dropdown").forEach(dropdown => {
+        if(!dropdown.contains(event.target)){
+          dropdown.classList.remove("active");
         }
       });
-
-      dropdown.classList.toggle("active");
-      list.classList.toggle("show");
     });
 
-    list.addEventListener("click",(event) =>{
-      event.stopPropagation();
-      const clickedItem = event.target;
+      function selectValue(event){
+        if(event.target.tagName === "LI"){
+          const dropdown = event.target.closest(".custom-dropdown");
 
-      if(clickedItem.tagName === "LI"){
-        selectedText.textContent = clickedItem.textContent;
-        dropdown.classList.add("selected");
+          if(dropdown){
+            const selectedText = dropdown.querySelector(".selected-text");
+            const clearBtn = dropdown.querySelector(".clear-btn");
+            const arrow = dropdown.querySelector(".arrow");
 
-        dropdowns.forEach(dropdown=>{
-          list.classList.remove("show");
-          dropdown.classList.remove("active");
-        });
+            selectedText.textContent = event.target.textContent;
+            selectedText.style.fontStyle = "normal";
 
-        clearBtn.style.display = "inline-block";
+            dropdown.classList.add("selected");
+
+            clearBtn.style.display = "block";
+            arrow.style.display = "none";
+          }
+        }
       }
-    });
 
-    clearBtn.addEventListener("click", (event) => {
-      event.stopPropagation(); 
-    
-      
-      dropdown.classList.remove("selected"); 
-      selectedText.textContent = defaultText; 
-      clearBtn.style.display = "none"; 
 
-      // dropdowns.forEach(dropdown =>{
-        list.classList.remove("show"); 
-        dropdown.classList.remove("active"); 
-      // })
+      function clearValue(event){
+        const dropdown = event.target.closest(".custom-dropdown");
 
-      header.style.pointerEvents = "none";
+        if(dropdown){
+          const selectedText = dropdown.querySelector(".selected-text");
+          const clearBtn = dropdown.querySelector(".clear-btn");
+          const arrow = dropdown.querySelector(".arrow");
 
-      setTimeout(()=>{
-        header.style.pointerEvents = "auto";
-      },300);
-      
-    });
 
-    document.addEventListener("click",(event)=>{
-      if(!dropdown.contains(event.target)){
-        list.classList.remove("show");
-        dropdown.classList.remove("active");
+          selectedText.textContent =
+          dropdown.id === "locationDropdown" ? "Select Location" : "Select Category";
+          selectedText.style.fontStyle = "italic";
+
+          dropdown.classList.remove("selected");
+          arrow.style.display = "block";
+          clearBtn.style.display = "none";
+        }
       }
-    });
-  });
-}
-
-activateDropdowns();
-
-
-
-const container = document.querySelector("#keywordInputContainer");
-const field = document.querySelector("#inputField");
-const input = document.querySelector("#inputKeyword");
-const keywordDropdown = document.querySelector("#keywordDropdown");
-
-const samplekeywords = ["Pizza","Sushi","Burger","Pasta","Ramen","Tacos"];
-
-function populateKeywordDropdown(){
-  console.log("I am working");
-  keywordDropdown.innerHTML = "";
-
-  keywordDropdown.style.maxHeight = "120px";
-  keywordDropdown.style.overflowY = "auto";
-
-  samplekeywords.forEach((keyword) => {
-    const li = document.createElement("li");
-
-    li.textContent = keyword;
-    li.classList.add("dropdown-item");
-    li.addEventListener("click",() => {
-      input.value = keyword;
-      keywordDropdown.classList.remove("show");
-    });
-    keywordDropdown.appendChild(li);
-  });
-
-  document.addEventListener("click",(event)=>{
-    if(!container.contains(event.target)){
-      keywordDropdown.classList.remove("show");
-      input.placeholder = "Type a keyword..."
-    }
-  });
-
-}
-
-function activateKeywordDropdown(){
-  console.log("The dropdown is active");
-  container.addEventListener("click",()=>{
-    populateKeywordDropdown();
-    keywordDropdown.classList.toggle("show");
   
-  });}
+      document.querySelectorAll(".custom-dropdown .dropdown-list").forEach(dropdownList =>{
+        dropdownList.addEventListener("click",selectValue);
+      });
 
-  activateKeywordDropdown();
-
-  input.addEventListener("focus",function(){
-    this.placeholder = "";
-  });
-  input.addEventListener("blur",function(){
-    this.style.color = "Type a keyword...";
-  });
-
-  console.log("I am runing till the end");
+      document.querySelectorAll(".custom-dropdown .clear-btn").forEach(clearBtn =>{
+        clearBtn.addEventListener("click",clearValue);
+      });
+  
 
 // Search button functionality
 
 document.querySelector("#searchBtn").addEventListener("click",function() {
 
-  console.log("Search Button is working");
 
   let selectedLocation = document.querySelector("#locationDropdown .selected-text").textContent;
   if(selectedLocation === "Select Location") selectedLocation = "";
@@ -214,8 +139,6 @@ document.querySelector("#searchBtn").addEventListener("click",function() {
 
 function updateRestaurantDisplay(filterRestaurants){
 
-  console.log("this function is working too");
-
   let container = document.querySelector("#restaurantCards");
   container.innerHTML = "";
 
@@ -236,8 +159,6 @@ function updateRestaurantDisplay(filterRestaurants){
     container.appendChild(card);
   });
 }
-
-console.log("I am working till the end");
 
 
 // Recently viewed restaurants functionality
