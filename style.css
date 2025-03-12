@@ -48,19 +48,18 @@
   --font-3xl: 4rem;    
 }
 
-
 *{
   box-sizing: border-box;
   margin:0;
   padding:0;
 }
+
 body{
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   font-size: var(--font-s);
   background-color: var(--primary-bg);
-  
 }
 .grid-container{
   display: grid;
@@ -70,12 +69,13 @@ body{
   "moreContainer"
   "hours"
   "search"
+  "searchResultsContainer"
   "scroll-container"
   "recent-blogs"
   "footer";
   grid-template-rows: 
   var(--header-height) 
-  repeat(6,auto)
+  repeat(7,auto)
   var(--footer-height);
   grid-template-columns: 1fr;
   min-height: 100vh;
@@ -172,6 +172,12 @@ body{
   border-radius: var(--space-s);
  }
 
+ .search-container.searchMode{
+  padding: var(--space-xl) var(--space-m);
+  margin: var(--space-2xl) var(--space-m);;
+  background: transparent;
+ }
+
  .slogan{
   grid-row: 1;
   font-family: 'Quicksand', sans-serif;
@@ -183,9 +189,25 @@ body{
   text-align: center;
   justify-content: center;
   align-items: center;
-  padding: var(--space-s) var(--space-m);
+  padding: var(--space-l) var(--space-m);
+  margin: var(--space-l) var(--space-m);
   color: var(--primary-color);
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.4); 
+ }
+ .slogan.searchMode{
+  display: none;
+ }
+
+ .dropdown-header.searchMode,
+ .input-field.searchMode{
+  border: 0.5px solid #ccc;
+}
+
+
+ .dropdown-list.searchMode{
+  border-left: 0.5px solid #ccc;
+  border-right: 0.5px solid #ccc;
+  border-bottom: 0.5px solid #ccc;
  }
 
  .search-widget{
@@ -197,10 +219,14 @@ body{
  }
 
 .custom-dropdown {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
   position: relative;
   width: 200px; 
-  background: var(--neutral-beige);
-  border: 1px solid var(--neutral-beige);
+  height: 45px;
+  background: var(--primary-bg);
   cursor: pointer;
   font-family: Arial, sans-serif;
   user-select: none;
@@ -208,9 +234,14 @@ body{
 
 .dropdown-header {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
   padding: var(--space-s) var(--space-m);
-  background: var(--primary-bg);
-  border-bottom: 0.5px solid #DED1BD;
+  background: transparent;
+  outline:none;
 }
 
 .header-wrapper{
@@ -221,10 +252,8 @@ body{
 }
 
 .arrow svg, .clear-btn svg{
-  width: 15px;
-  height: 15px;
-  color: var(--secondary-color);
-  font-size: var(--font-m);
+  width: 16px;
+  height: 16px;
 }
 
 .custom-dropdown .clear-btn{
@@ -239,15 +268,15 @@ body{
 }
 
 .dropdown-list{
-  display: none;
   position: absolute;
   top: 100%;
   left: 0;
+  box-sizing: border-box;
   width: 100%;
+  min-width: 200px;
   max-height: 120px;
+  display: none;
   background: var(--primary-bg);
-  border: 1px solid var(--primary-bg);
-  border-bottom: 0.5px solid #DED1BD;
   overflow-y: auto;
   z-index: 1000;
   list-style: none;
@@ -256,7 +285,8 @@ body{
 
 
 .custom-dropdown.active .dropdown-list {
-  max-height: 200px; 
+  max-width: 200px; 
+  max-height: 45px;
   display:block;
   overflow-y: auto;
 }
@@ -267,7 +297,7 @@ body{
   padding: var(--space-s) var(--space-m);
   cursor: pointer;
   transition: background 0.2s;
-  border-bottom: 0.5px solid #DED1BD;
+  border-top: 0.5px solid #ddd;
 }
 
 .dropdown-list li:hover {
@@ -280,11 +310,14 @@ body{
 
 
 .keyword-input-container{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
   display: flex;
   position: relative;
   width: 200px; 
-  background: var(--neutral-beige);
-  border: 1px solid var(--neutral-beige);
+  height: 45px;
+  background: var(--primary-bg);
   cursor: pointer;
   font-family: Arial, sans-serif;
   user-select: none;
@@ -292,19 +325,17 @@ body{
 
 .input-field{
   display: flex;
-  flex-grow: 1;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  height: 100%;
   padding: var(--space-s) var(--space-m);
-  background: var(--primary-bg);
+  background: transparent;
   font-family: Arial, sans-serif;
-  width: 200px;
-  height: 45px;
-  border-bottom: 0.5px solid #DED1BD;
 }
 
 .keyword-input{
-  flex: 1;
+  width: 100%;
   height: 100%;
   border: none;
   background:transparent;
@@ -331,7 +362,7 @@ body{
   font-size: var(--font-s);
   font-weight: 700;
   padding: var(--space-m) var(--space-2xl);
-  border: 2px solid var(--accent-color);
+  border: none;
   border-radius: var(--space-l);
   cursor: pointer;
   transition: all 0.3s;
@@ -351,8 +382,6 @@ transform: translateY(-2px);
   font-size: var(--font-xl);
   margin: 0 auto;
 }
-
-
 
 .scroll-container{
   grid-area: scroll-container;
@@ -542,7 +571,6 @@ transform: translateY(-2px);
     font-size: var(--font-xl);
     font-weight: 700;
     padding: var(--space-s) var(--space-m);
-
   }
   .all-restaurants{
     grid-row: 2;
@@ -578,6 +606,33 @@ transform: translateY(-2px);
     transform: translateY(-2px);
   }
 
+
+  .search-results-container{
+    grid-area: searchResultsContainer;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr auto;
+    gap: var(--space-m);
+    display: none;
+  }
+  .search-results-container h2{
+    grid-row: 1;
+    display: flex;
+    justify-self: center;
+    text-align: center;
+    color: var(--primary-color);
+    font-family: 'Noto Serif JP', serif;
+    font-size: var(--font-l);
+    font-weight: bold;
+    padding: var(--space-3xs);
+  }
+  .search-results{
+    grid-row: 2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   .more-container{
     grid-area: moreContainer;
