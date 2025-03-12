@@ -109,10 +109,7 @@ function populateDropdown(dropdownId, values) {
   
 
 // Search button functionality
-
-document.querySelector("#searchBtn").addEventListener("click",function() {
-
-
+function searchRestaurant(){
   let selectedLocation = document.querySelector("#locationDropdown .selected-text").textContent;
   if(selectedLocation === "Select Location") selectedLocation = "";
 
@@ -132,20 +129,49 @@ document.querySelector("#searchBtn").addEventListener("click",function() {
        : true;
     return matchesLocation && matchesCategory && matchesKeyword;
   });
-
   updateRestaurantDisplay(filterRestaurants);
+}
 
-});
+document.querySelector("#searchBtn").addEventListener("click",searchRestaurant);
+  
+
 
 function updateRestaurantDisplay(filterRestaurants){
-
-  let container = document.querySelector("#restaurantCards");
+  let searchResultsContainer = document.querySelector("#searchResultsContainer");
+  let otherContainers = document.querySelectorAll("#scrollContainer,#recentBlogs");
+  let container = document.querySelector("#searchResults");
+  let slogan = document.querySelector(".slogan");
+  let searchContainer = document.querySelector(".search-container");
+  let inputFields = document.querySelectorAll(".dropdown-header,.input-field");
+  let lists = document.querySelectorAll(".dropdown-list");
+  let resultsHeader = document.querySelector("#resultsHeader");
   container.innerHTML = "";
 
   if (filterRestaurants.length === 0){
-    container.innerHTML = `<p id = "noResults" >No matching restaurants found.<p>`;
+    container.innerHTML = `<p id = "noResults">No matching restaurants found.<p>`;
     return;
+  }else{
+    let count = filterRestaurants.length;
+    resultsHeader.textContent = count === 1 ? "1 restaurant found" : `${count} restaurants found`;
   }
+
+  if(slogan){
+    slogan.classList.add("searchMode");
+  }
+
+  inputFields.forEach(field => field.classList.remove("searchMode"));
+  lists.forEach(list => list.classList.remove("searchMode"));
+
+  inputFields.forEach(fields =>{
+    fields.classList.add("searchMode");
+  });
+  lists.forEach(list => {
+    list.classList.add("searchMode");
+  });
+
+  searchContainer.classList.add("searchMode");
+
+
   filterRestaurants.forEach(restaurant => {
     let card = document.createElement("div");
     card.classList.add ("card");
@@ -158,6 +184,10 @@ function updateRestaurantDisplay(filterRestaurants){
     `;
     container.appendChild(card);
   });
+  otherContainers.forEach(container => {
+    container.style.display = "none";
+  });
+  searchResultsContainer.style.display = "grid";
 }
 
 
