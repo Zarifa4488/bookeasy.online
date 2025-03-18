@@ -29,15 +29,29 @@
     <div class="grid-container" id="gridContainer">
       <!-- Navigation -->
       <nav class="navbar">
-        <div class="logo">
-          <a href="#logo">bookeasy.online</a>
+        <div class="top-navbar" id="topNavbar">
+          <div class="working-hours">
+            Need Help? Our live chat is open every day, 9 AM – 9 PM (Tokyo
+            Time)!
+          </div>
         </div>
-        <ul class="navlinks">
-          <li><a href="#about">WHY US</a></li>
-          <li><a href="#services">SERVICES</a></li>
-          <li><a href="#policies">PRICING &#x26; POLICIES</a></li>
-          <li><a href="#share" class="share-btn" id="shareBtn">Share</a></li>
-        </ul>
+
+        <div class="bottom-navbar">
+          <div class="bottom-navbar-wrapper">
+            <div class="logo">
+              <a href="#logo">bookeasy.online</a>
+            </div>
+
+            <ul class="navlinks">
+              <li><a href="#about">Why Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#policies">Pricing &#x26; Policies</a></li>
+              <li>
+                <a href="#share" class="share-btn" id="shareBtn">Share</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
 
       <!-- View All Container (Initially Hidden) -->
@@ -53,23 +67,6 @@
         <div id="allBlogs" class="all-blogs"></div>
         <button id="lessBtn">Less</button>
       </div>
-
-      <!-- Working Hours -->
-      <div id="workingHours" class="working-hours">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="30"
-          viewBox="0 0 50 50"
-          fill="#4b532"
-        >
-          <path
-            d="M 8.0136719 7.0292969 A 1.0001 1.0001 0 0 0 7.3222656 7.3222656 C 2.7995047 11.846068 -1.1842379e-15 18.102792 0 25 C 0 31.897208 2.7995047 38.153932 7.3222656 42.677734 A 1.0001 1.0001 0 0 0 8.7363281 42.677734 L 11.570312 39.84375 A 1.0001 1.0001 0 0 0 11.570312 38.429688 C 8.1286602 34.987084 6 30.242812 6 25 C 6 19.757188 8.1297921 15.013788 11.572266 11.572266 A 1.0001 1.0001 0 0 0 11.572266 10.158203 L 8.7363281 7.3222656 A 1.0001 1.0001 0 0 0 8.0136719 7.0292969 z M 41.957031 7.0292969 A 1.0001 1.0001 0 0 0 41.263672 7.3222656 L 38.427734 10.158203 A 1.0001 1.0001 0 0 0 38.427734 11.572266 C 41.870208 15.013788 44 19.757188 44 25 C 44 30.242812 41.870208 34.986212 38.427734 38.427734 A 1.0001 1.0001 0 0 0 38.427734 39.841797 L 41.263672 42.677734 A 1.0001 1.0001 0 0 0 42.677734 42.677734 C 47.201645 38.154865 50 31.897208 50 25 C 50 18.102792 47.200495 11.846068 42.677734 7.3222656 A 1.0001 1.0001 0 0 0 41.957031 7.0292969 z M 8.0976562 9.5117188 L 9.5195312 10.933594 C 6.1269359 14.664061 4 19.575176 4 25 C 4 30.424712 6.1260807 35.337173 9.5175781 39.068359 L 8.0976562 40.488281 C 4.3450168 36.394537 2 30.995061 2 25 C 2 19.004939 4.3450168 13.605463 8.0976562 9.5117188 z M 41.902344 9.5117188 C 45.654983 13.605463 48 19.004939 48 25 C 48 30.995061 45.655695 36.395442 41.902344 40.488281 L 40.480469 39.066406 C 43.873064 35.335939 46 30.424824 46 25 C 46 19.575176 43.873064 14.664061 40.480469 10.933594 L 41.902344 9.5117188 z M 14.382812 13.398438 A 1.0001 1.0001 0 0 0 13.691406 13.691406 C 10.796092 16.587786 9 20.593819 9 25 C 9 29.406181 10.796092 33.412214 13.691406 36.308594 A 1.0001 1.0001 0 0 0 15.105469 36.308594 L 17.931641 33.482422 A 1.0001 1.0001 0 0 0 17.931641 32.068359 C 16.119902 30.255711 15 27.761761 15 25 C 15 22.238239 16.119902 19.744289 17.931641 17.931641 A 1.0001 1.0001 0 0 0 17.931641 16.517578 L 15.105469 13.691406 A 1.0001 1.0001 0 0 0 14.382812 13.398438 z M 35.587891 13.398438 A 1.0001 1.0001 0 0 0 34.894531 13.691406 L 32.068359 16.517578 A 1.0001 1.0001 0 0 0 32.068359 17.931641 C 33.880098 19.744289 35 22.238239 35 25 C 35 27.761761 33.880098 30.255711 32.068359 32.068359 A 1.0001 1.0001 0 0 0 32.068359 33.482422 L 34.894531 36.308594 A 1.0001 1.0001 0 0 0 36.308594 36.308594 C 39.203908 33.412214 41 29.406181 41 25 C 41 20.593819 39.203908 16.587786 36.308594 13.691406 A 1.0001 1.0001 0 0 0 35.587891 13.398438 z M 14.466797 15.880859 L 15.947266 17.361328 C 14.184764 19.450917 13 22.061346 13 25 C 13 27.938654 14.184764 30.549083 15.947266 32.638672 L 14.466797 34.119141 C 12.335969 31.66133 11 28.50273 11 25 C 11 21.49727 12.335969 18.33867 14.466797 15.880859 z M 35.533203 15.880859 C 37.664031 18.33867 39 21.49727 39 25 C 39 28.50273 37.664031 31.66133 35.533203 34.119141 L 34.052734 32.638672 C 35.815236 30.549083 37 27.938654 37 25 C 37 22.061346 35.815236 19.450917 34.052734 17.361328 L 35.533203 15.880859 z M 25 18 C 21.134 18 18 21.134 18 25 C 18 28.866 21.134 32 25 32 C 28.866 32 32 28.866 32 25 C 32 21.134 28.866 18 25 18 z M 25 20 C 27.757 20 30 22.243 30 25 C 30 27.757 27.757 30 25 30 C 22.243 30 20 27.757 20 25 C 20 22.243 22.243 20 25 20 z"
-          ></path></svg
-        >Daily Live Chat
-        <strong>9:00 AM to 9:00 PM (Tokyo Time)</strong>
-      </div>
-
       <!-- Search Container -->
       <div id="searchContainer" class="search-container">
         <div class="tag-line">
@@ -185,122 +182,131 @@
         <button class="more-btn">More</button>
       </section>
 
-      <!-- chat icon -->
-
-      <div id="chat-icon" onclick="openChat()">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="70"
-          height="70"
-          viewBox="0 0 512 512"
-          fill="#B08401"
-        >
-          <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-          <path
-            d="M168.2 384.9c-15-5.4-31.7-3.1-44.6 6.4c-8.2 6-22.3 14.8-39.4 22.7c5.6-14.7 9.9-31.3 11.3-49.4c1-12.9-3.3-25.7-11.8-35.5C60.4 302.8 48 272 48 240c0-79.5 83.3-160 208-160s208 80.5 208 160s-83.3 160-208 160c-31.6 0-61.3-5.5-87.8-15.1zM26.3 423.8c-1.6 2.7-3.3 5.4-5.1 8.1l-.3 .5c-1.6 2.3-3.2 4.6-4.8 6.9c-3.5 4.7-7.3 9.3-11.3 13.5c-4.6 4.6-5.9 11.4-3.4 17.4c2.5 6 8.3 9.9 14.8 9.9c5.1 0 10.2-.3 15.3-.8l.7-.1c4.4-.5 8.8-1.1 13.2-1.9c.8-.1 1.6-.3 2.4-.5c17.8-3.5 34.9-9.5 50.1-16.1c22.9-10 42.4-21.9 54.3-30.6c31.8 11.5 67 17.9 104.1 17.9c141.4 0 256-93.1 256-208S397.4 32 256 32S0 125.1 0 240c0 45.1 17.7 86.8 47.7 120.9c-1.9 24.5-11.4 46.3-21.4 62.9zM144 272a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm144-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm80 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"
-          />
-        </svg>
-      </div>
-
       <!-- Footer -->
       <footer class="site-footer">
-        <p>&copy; 2025 bookeasy.online. All rights reserved.</p>
-
-        <div class="contact-info">
-          <p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 512 512"
-              fill="#5f6368"
-            >
-              <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-              <path
-                d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
-              /></svg
-            ><strong>+(81)90-5283-5653</strong>
-          </p>
-          <p>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 512 512"
-              fill="#5f6368"
-            >
-              <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-              <path
-                d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
-              /></svg
-            ><strong>zerife.aydayeva@gmail.com</strong>
-          </p>
+        <div class="first-row-wrapper">
+          <div class="footer-logo">bookeasy.online</div>
+          <div class="quick-link">
+            <ul>
+              <li><strong>Quick Link</strong></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#policies">Pricing & Policy</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="contact-info">
+            <p id="support"><strong>Support</strong></p>
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 512 512"
+                fill="#FAF6F2"
+              >
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
+                /></svg
+              >+(81)90-5283-5653
+            </p>
+            <p>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="15"
+                viewBox="0 0 512 512"
+                fill="#FAF6F2"
+              >
+                <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path
+                  d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"
+                /></svg
+              >zerife.aydayeva@gmail.com
+            </p>
+          </div>
+          <div class="social-media-icons-wrapper">
+            <p class="follow-us"><strong>Follow Us</strong></p>
+            <div class="social-media-icons">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 448 512"
+                  fill="#FAF6F2"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                aria-label="Twitter"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 512 512"
+                  fill="#FAF6F2"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 448 512"
+                  fill="#FAF6F2"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                aria-label="LinkedIn"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  viewBox="0 0 448 512"
+                  fill="#FAF6F2"
+                >
+                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path
+                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="social-media-icons">
-          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              viewBox="0 0 448 512"
-              fill="#5f6368"
-            >
-              <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-              <path
-                d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"
-              />
-            </svg>
-            <span class="tooltip">Facebook</span>
-          </a>
-          <a href="https://twitter.com" target="_blank" aria-label="Twitter">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              viewBox="0 0 512 512"
-              fill="#5f6368"
-            >
-              <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-              <path
-                d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
-              />
-            </svg>
-            <span class="tooltip">X</span>
-          </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            aria-label="Instagram"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              viewBox="0 0 448 512"
-              fill="#5f6368"
-            >
-              <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-              <path
-                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-              />
-            </svg>
-            <span class="tooltip">Instagram</span>
-          </a>
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="30"
-              height="30"
-              viewBox="0 0 448 512"
-              fill="#5f6368"
-            >
-              <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-              <path
-                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
-              />
-            </svg>
-            <span class="tooltip">LinkedIn</span>
-          </a>
+
+        <div class="copy-right">
+          <p>&copy; 2025 bookeasy.online. All rights reserved.</p>
         </div>
       </footer>
     </div>
