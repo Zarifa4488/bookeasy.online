@@ -95,7 +95,7 @@ body{
     grid-template-columns: 1fr;
     grid-template-rows: 64px 64px;
     width: 100%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     border-bottom: none;
   }
 
@@ -173,8 +173,6 @@ body{
     width: 24px;
   }
   
-
-
   .bottom-navbar{
     box-sizing: border-box;
     padding: 0;
@@ -215,17 +213,17 @@ body{
     color:var(--highlight-color);
     transform: translateY(-2px);
   }
-  #shareBtn{
+  #postBtn{
     display: inline-block;
-    color: var(--darker-pink);
+    color: var(--neutral-pink);
     border-radius: var(--space-l);
     font-size: 18px;
     font-family: 'Fredoka One', sans-serif;
     cursor: pointer;
     transition: color 0.2s ease;
   }
-  #shareBtn:hover{
-    color: var(--neutral-pink)
+  #postBtn:hover{
+    color: var(--darker-pink)
   }
 
   .logo{
@@ -881,16 +879,29 @@ transform: translateY(-2px);
   padding: 40px 60px;
 }
 
-.footer-logo{
+.logo-wrapper{
   grid-column: 1;
+}
+
+.footer-logo{
   display: flex;
   justify-content: start;
   align-items: start;
   font-family: 'Fredoka One', sans-serif;
   font-size: 16px;
-  font-weight: normal;
   color:var(--highlight-color);
   letter-spacing: 0.05em;
+}
+
+.footer-tagline{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 12px;
+  color:var(--accent-color);
+  letter-spacing: 0.05em;
+  padding: var(--space-xs) 0;
 }
 
 .quick-link{
@@ -983,6 +994,42 @@ transform: translateY(-2px);
 .social-media-icons a:hover svg{
   fill: var(--accent-color);
 }
+
+.post-wrapper{
+  grid-column: 4;
+}
+
+.footer-post-btn{
+  background-color: transparent;
+  border: none;
+  padding: none;
+  margin: none;
+  font-size: 18px;
+  font-family: 'Fredoka One', sans-serif;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  margin-top: var(--space-m);
+}
+
+.post-tagline{
+  font-family: 'Fredoka One', sans-serif;
+  font-size: 12px;
+  color:var(--accent-color);
+  letter-spacing: 0.05em;
+  padding: var(--space-xs) 0;
+}
+
+.footer-post-btn a{
+  text-decoration: none;
+  color: var(--neutral-pink);
+}
+
+
+.footer-post-btn a:hover{
+  color: var(--darker-pink);
+}
+
+
 
 .copy-right{
   grid-row: 2;
