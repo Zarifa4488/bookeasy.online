@@ -70,10 +70,11 @@ body{
   "searchResultsContainer"
   "scroll-container"
   "recent-blogs"
+  "restaurant-suggestion"
   "footer";
   grid-template-rows: 
   var(--header-height) 
-  repeat(6,auto)
+  repeat(7,auto)
   var(--footer-height);
   grid-template-columns: 1fr;
   min-height: 100vh;
@@ -712,13 +713,13 @@ transform: translateY(-2px);
     display: flex;
     justify-self: center;
     color: var(--primary-color);
-    font-family: 'Noto Serif JP', serif;
+    font-family: 'Fredoka One', sans-serif;
     font-size: var(--font-xl);
     font-weight: 700;
     padding: var(--space-s) var(--space-m);
   }
 
-  .all-blogs{
+  .all-posts{
    grid-row: 2;
    display: flex;
    gap: var(--space-m);
@@ -734,7 +735,7 @@ transform: translateY(-2px);
     border: 2px solid var(--accent-color);
     background-color:var(--primary-color);
     color: var(--primary-bg);
-    font-family: 'Noto Serif JP', serif;
+    font-family: 'Fredoka One', sans-serif;
     font-size: var(--font-s);
     font-weight: 700;
     padding: var(--space-s) var(--space-m);
@@ -770,24 +771,25 @@ transform: translateY(-2px);
     transform: translateY(0);
   }
 
-  .recent-blogs{
+  .recent-posts{
     grid-area: recent-blogs;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto  auto auto;
-    padding: var(--space-xl);
+    padding: var(--space-2xl);
     background-color: var(--primary-bg);
     text-align: center;
+    border-top: 2px solid var(--accent-color);
   }
-  .recent-blogs h2{
+  .recent-posts h2{
     grid-column: 1;
     grid-row: 1;
-    font-family: 'Noto Serif JP', serif;
+    font-family: 'Fredoka One', sans-serif;
     font-size: var(--font-xl);
     color: var(--primary-color);
     margin-bottom: var(--space-l);
   }
-  .blog-cards{
+  .post-cards{
     grid-column: 1;
     grid-row: 2;
     display: flex;
@@ -800,7 +802,7 @@ transform: translateY(-2px);
     
   }
 
-  .blog-card{
+  .post-card{
     background-color:var(--primary-bg);
     border-radius: var(--space-m);
     overflow: hidden;
@@ -812,26 +814,26 @@ transform: translateY(-2px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .blog-card img{
+  .post-card img{
     width: 100%;
     height: 150px;
     object-fit: cover;
   }
-  .blog-card h3{
+  .post-card h3{
     font-family: 'Montserrat', serif;
     font-size: var(--font-m);
     color: var(--primary-color);
     margin: var(--font-s) var(--space-m);
   }
 
-  .blog-card p{
+  .post-card p{
     font-family: 'Roboto', sans-serif;
     font-size: var(--font-s);
     color: var(--green-color);
     margin: 0 var(--space-m) var(--font-m);
   }
 
-  .blog-card:hover{
+  .post-card:hover{
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.08);
   }
@@ -843,7 +845,7 @@ transform: translateY(-2px);
     margin: 0 auto;
     background-color: var(--highlight-color);
     color: var(--accent-color);
-    font-family: 'Montserrat', serif;
+    font-family:'Fredoka One', sans-serif;
     font-size: var(--font-s);
     font-weight: 700;
     width: fit-content;
@@ -859,6 +861,35 @@ transform: translateY(-2px);
     color: var(--primary-bg);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .restaurant-suggestion{
+    grid-area: restaurant-suggestion;
+    text-align: center;
+    margin-top: var(--space-xl);
+  }
+
+  .suggest-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    color: var(--primary-color);
+    font-size: var(--font-s);
+    font-weight: bold;
+  }
+
+  .suggest-btn {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--highlight-color);
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .suggest-btn:hover{
+    color: var(--primary-color);
   }
   
 

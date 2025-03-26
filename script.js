@@ -138,7 +138,7 @@ document.querySelector("#searchBtn").addEventListener("click",searchRestaurant);
 
 function updateRestaurantDisplay(filterRestaurants){
   let searchResultsContainer = document.querySelector("#searchResultsContainer");
-  let otherContainers = document.querySelectorAll("#scrollContainer,#recentBlogs");
+  let otherContainers = document.querySelectorAll("#scrollContainer,#recentPosts");
   let container = document.querySelector("#searchResults");
   let slogan = document.querySelector(".slogan");
   let searchContainer = document.querySelector(".search-container");
@@ -244,7 +244,7 @@ prevBtn.addEventListener("click", () => {
 // View All Functionality
 const viewAllContainer = document.querySelector("#viewAllContainer");
 const allRestaurantsContainer = document.querySelector("#allRestaurants");
-const otherContainers = document.querySelectorAll("#workingHours,#searchContainer,#scrollContainer,#recentBlogs");
+const otherContainers = document.querySelectorAll("#workingHours,#searchContainer,#scrollContainer,#recentPosts");
 const viewAllBtn = document.querySelector("#viewAllBtn");
 const showLessBtn = document.querySelector("#showLessBtn");
 
@@ -284,8 +284,8 @@ showLessBtn.addEventListener("click", () => {
   });
 });
 
-// Blogs functionality
-const blogs = [
+// Posts functionality
+const posts = [
   {
     title: "Japanese Dining Etiquette",
     description: "Discover the do's and don'ts of dining in Japan.",
@@ -344,37 +344,30 @@ const blogs = [
 
 
 const moreContainer = document.querySelector("#moreContainer");
-const blogCardsContainer = document.querySelector("#blogCardsContainer"); // Fixed ID
+const postCardsContainer = document.querySelector("#postCardsContainer"); // Fixed ID
 const moreBtn = document.querySelector(".more-btn");
 const lessBtn = document.querySelector("#lessBtn");
 
 
-function renderBlogs(container, count = blogs.length) {
-  console.log("Blogs running");
-  const blogContainer = container.id==="blogCardsContainer" ? container:container.querySelector("#allBlogs");
+function renderPosts(container, count = posts.length) {
+  const postContainer = container.id==="postCardsContainer" ? container:container.querySelector("#allPosts");
 
-  if (!blogContainer) {
-    console.error("allBlogs container not found inside", container);
-    return;
-  }
+postContainer.innerHTML = "";
 
-blogContainer.innerHTML = "";
+  posts.slice(0,count).forEach(post => {
+    const postCard = document.createElement("div");
+    postCard.classList.add("post-card");
 
-  blogs.slice(0,count).forEach(blog => {
-    const blogCard = document.createElement("div");
-    blogCard.classList.add("blog-card");
-
-    blogCard.innerHTML = `
-      <img src="${blog.image}" alt="${blog.title}" />
-      <h3>${blog.title}</h3>
-      <p>${blog.description}</p>
+    postCard.innerHTML = `
+      <img src="${post.image}" alt="${post.title}" />
+      <h3>${post.title}</h3>
+      <p>${post.description}</p>
     `;
 
-    blogContainer.appendChild(blogCard);
+    postContainer.appendChild(postCard);
   });
 }
-console.log("Blog Cards Container:", blogCardsContainer);
-renderBlogs(document.querySelector("#blogCardsContainer"),3);
+renderPosts(document.querySelector("#postCardsContainer"),3);
 
 
 
@@ -384,27 +377,19 @@ moreContainer.classList.add("hidden");
 moreContainer.classList.remove("show");
 
 moreBtn.addEventListener("click", () => {
-  console.log("blogs running here too");
   if (moreContainer.classList.contains("hidden")) {
-    console.log("yessss");
     moreContainer.classList.remove("hidden");
     moreContainer.classList.add("show");
 
     lessBtn.classList.remove("hidden");
-    console.log("Less button should be visible now:", lessBtn);
     lessBtn.classList.add("show");
 
-    console.log("Less button should be visible here too now:", lessBtn);
-
     otherContainers.forEach(container => {
-      console.log("yess 22")
       container.classList.add("hidden");
     });
 
-    renderBlogs(moreContainer); 
-    console.log("I am running hahaahha")
+    renderPosts(moreContainer); 
   } else {
-    console.log("is it me???")
     moreContainer.classList.remove("show");
     moreContainer.classList.add("hidden");
 
@@ -414,15 +399,12 @@ moreBtn.addEventListener("click", () => {
       console.log("came till here")
       container.classList.remove("hidden");
     });
-    console.log("Blog Cards Container:", blogCardsContainer);
-    renderBlogs(blogCardsContainer,3); 
+    renderPosts(postCardsContainer,3); 
   }
-  console.log("still hereeeeee")
 });
 
 lessBtn.addEventListener("click", () => {
 
-  console.log("I am less button I am working");
   moreContainer.classList.add("hidden");
   moreContainer.classList.remove("show");
 
@@ -433,5 +415,5 @@ lessBtn.addEventListener("click", () => {
   otherContainers.forEach(container => {
     container.classList.remove("hidden");
   });
-  renderBlogs(blogCardsContainer, 3);
+  renderPosts(postCardsContainer, 3);
 });
