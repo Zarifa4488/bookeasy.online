@@ -287,64 +287,58 @@ showLessBtn.addEventListener("click", () => {
 // Posts functionality
 const posts = [
   {
-    title: "Japanese Dining Etiquette",
-    description: "Discover the do's and don'ts of dining in Japan.",
-    image: "img.img/image1.jpg",
-    link: "#"
+    title: "Top 5 Sushi Spots in Tokyo",
+    description:"Explore Tokyo’s best-kept sushi secrets, from hidden gems to local favorites.",
+    date: "Mar 28, 2025",
+    authorInitials: "ZS",
+    nickname:"Zara",
+    views:23,
   },
   {
-    title: "Top 10 Sushi Spots",
-    description: "Explore the best sushi restaurants in Tokyo.",
-    image: "img.img/image2.jpg",
-    link: "#"
+    title: "How to Book a Restaurant Without Japanese",
+    description:"From creamy parfaits to fluffy cakes—don’t miss these Kyoto matcha treats.",
+    date: "Mar 27, 2025",
+    authorInitials: "ZA",
+    nickname:"Fuyu",
+    views: 83,
   },
   {
-    title: "Seasonal Japanese Foods",
-    description: "Learn about the seasonal dishes you must try.",
-    image: "img.img/image3.jpg",
-    link: "#"
+    title: "5 Must-Try Matcha Desserts",
+    description:"Explore A step-by-step guide for foreigners to book restaurants stress-free in Japan.",
+    date: "Mar 26, 2025",
+    authorInitials: "MK",
+    nickname:"Kaitotto",
+    views: 77,
   },
   {
-    title: "Japanese Dining Etiquette",
-    description: "Discover the do's and don'ts of dining in Japan.",
-    image: "img.img/image1.jpg",
-    link: "#"
+    title: "Top 5 Sushi Spots in Tokyo",
+    description:"Explore Tokyo’s best-kept sushi secrets, from hidden gems to local favorites.",
+    date: "Mar 28, 2025",
+    authorInitials: "ZS",
+    nickname:"Zara",
+    views:23,
   },
   {
-    title: "Top 10 Sushi Spots",
-    description: "Explore the best sushi restaurants in Tokyo.",
-    image: "img.img/image2.jpg",
-    link: "#"
+    title: "How to Book a Restaurant Without Japanese",
+    description:"From creamy parfaits to fluffy cakes—don’t miss these Kyoto matcha treats.",
+    date: "Mar 27, 2025",
+    authorInitials: "ZA",
+    nickname:"Fuyu",
+    views: 83,
   },
   {
-    title: "Seasonal Japanese Foods",
-    description: "Learn about the seasonal dishes you must try.",
-    image: "img.img/image3.jpg",
-    link: "#"
-  },
-  {
-    title: "Japanese Dining Etiquette",
-    description: "Discover the do's and don'ts of dining in Japan.",
-    image: "img.img/image1.jpg",
-    link: "#"
-  },
-  {
-    title: "Top 10 Sushi Spots",
-    description: "Explore the best sushi restaurants in Tokyo.",
-    image: "img.img/image2.jpg",
-    link: "#"
-  },
-  {
-    title: "Seasonal Japanese Foods",
-    description: "Learn about the seasonal dishes you must try.",
-    image: "img.img/image3.jpg",
-    link: "#"
+    title: "5 Must-Try Matcha Desserts",
+    description:"Explore A step-by-step guide for foreigners to book restaurants stress-free in Japan.",
+    date: "Mar 26, 2025",
+    authorInitials: "MK",
+    nickname:"Kaitotto",
+    views: 77,
   }
 ];
 
 
 const moreContainer = document.querySelector("#moreContainer");
-const postCardsContainer = document.querySelector("#postCardsContainer"); // Fixed ID
+const postCardsContainer = document.querySelector("#postCardsContainer"); 
 const moreBtn = document.querySelector(".more-btn");
 const lessBtn = document.querySelector("#lessBtn");
 
@@ -359,9 +353,25 @@ postContainer.innerHTML = "";
     postCard.classList.add("post-card");
 
     postCard.innerHTML = `
-      <img src="${post.image}" alt="${post.title}" />
-      <h3>${post.title}</h3>
-      <p>${post.description}</p>
+    <div class="post-header">
+    <div class="avatar-circle">
+      <span class="initials">${post.authorInitials || "?"}</span>
+    </div>
+    <div class="nickname-date">
+    <span class="nickname">${post.nickname || "?"}</span>
+    <span class="post-date">${post.date || ""}</span>
+    </div>
+    </div>
+      <div class="post-body">
+    <h3 class="post-title">${post.title}</h3>
+    <h4 class="post-description">${post.description}</h4>
+  </div>
+  <div class="post-footer">
+  <div class="views">
+    <span class="post-views">${post.views || ""}</span>
+    <p class="views-text">views</p>
+    </div>
+  </div>
     `;
 
     postContainer.appendChild(postCard);
