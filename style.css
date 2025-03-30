@@ -15,8 +15,8 @@
   --space-7xl: 80px;
 
   /* Max Widths */
-  --content-max-width: 1200px;
-  --sidebar-width: 300px;
+  --content-max-width: min(90%,1200px);
+  --sidebar-width: 200px;
 
   /* Grid Gaps */
   --grid-gap: var(--space-xl);
@@ -36,6 +36,7 @@
   --neutral-pink:#D49E8D;
   --darker-pink:#A67865;
   --ligther-beige:#EADDD7;
+  --description-color: #6b4f3b;
 
   /* Font Sizes */
   --font-xxs: 0.75rem; 
@@ -69,7 +70,7 @@ body{
   "search"
   "searchResultsContainer"
   "scroll-container"
-  "recent-blogs"
+  "recent-posts"
   "restaurant-suggestion"
   "footer";
   grid-template-rows: 
@@ -77,6 +78,7 @@ body{
   repeat(7,auto)
   var(--footer-height);
   grid-template-columns: 1fr;
+  padding: o var(--space-xl);
   min-height: 100vh;
   margin: 0 auto;
   gap: var(--grid-gap);
@@ -772,7 +774,7 @@ transform: translateY(-2px);
   }
 
   .recent-posts{
-    grid-area: recent-blogs;
+    grid-area: recent-posts;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto  auto auto;
@@ -793,44 +795,133 @@ transform: translateY(-2px);
     grid-column: 1;
     grid-row: 2;
     display: flex;
+    flex-direction: row;
     gap: var(--space-m);
     justify-content: center;
     align-items: center;
     gap: var(--space-l);
     margin-bottom: var(--space-l);
     padding: var(--space-xl);
-    
   }
 
   .post-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color:var(--primary-bg);
     border-radius: var(--space-m);
     overflow: hidden;
     border: 2px solid #ddd;
     width: 300px;
-    max-width: 100%;
+    height: 300px;
     margin: var(--space-s);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: var(--space-l);
   }
 
-  .post-card img{
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-  }
-  .post-card h3{
-    font-family: 'Montserrat', serif;
-    font-size: var(--font-m);
-    color: var(--primary-color);
-    margin: var(--font-s) var(--space-m);
+  .post-header{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: var(--space-s);
+    margin-bottom: var(--space-m);
   }
 
-  .post-card p{
-    font-family: 'Roboto', sans-serif;
+  .avatar-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    text-align: center;
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    background-color: var(--neutral-pink);
+    color: var(--primary-bg);
+    font-family: 'Fredoka One', sans-serif;
     font-size: var(--font-s);
-    color: var(--green-color);
-    margin: 0 var(--space-m) var(--font-m);
+    font-weight: bold;
+    padding: var(--space-xs) 0;
+  }
+
+  .nickname-date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+  }
+  .nickname{
+    font-size: var(--font-s);
+    font-family: 'Noto Serif JP', serif;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: var(--primary-color);
+  }
+  .post-date{
+    font-size: var(--font-xs);
+    font-family: 'Noto Serif JP', serif;
+    color: var(--secondary-color);
+  }
+
+  .post-body{
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    max-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-s);
+  }
+
+  .post-body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3rem; 
+    width: 100%;
+    background: linear-gradient(to bottom, transparent, var(--primary-bg));
+  }
+
+  .post-title{
+    font-size: var(--font-s);
+    font-family: 'Noto Serif JP', serif;
+    color:var(--highlight-color);
+    font-weight: bold;
+    margin: var(--space-s) 0;
+    text-align: start;
+  }
+  .post-description{
+    font-size: var(--font-xs);
+    font-family: 'Noto Serif JP', serif;
+    text-align: start;
+    color: var(--description-color);
+  }
+
+  .post-footer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: var(--secondary-color);
+  }
+
+  .views{
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Noto Serif JP', serif;
+    font-size: var(--font-xs);
+    line-height: 1;
+    gap: var(--space-xxs);
+  }
+
+  .views-text {
+    font-size:var(--font-xs) ;
+    font-family: 'Noto Serif JP', serif;
   }
 
   .post-card:hover{
