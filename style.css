@@ -255,6 +255,11 @@ body{
   background-color: var(--accent-color);
  }
 
+ .search-container.searchMode{
+  background-color: transparent;
+  
+ }
+
 .search-title {
   padding: var(--space-l) 0;
   font-size: var(--font-l);
@@ -367,6 +372,8 @@ body{
 
 .dropdown-list li:hover {
   background: var(--accent-color);
+
+
 }
 
 .custom-dropdown:focus-within {
@@ -1060,11 +1067,11 @@ transform: translateY(-2px);
   margin-bottom: 16px;
 }
 
-.quick-link ul a{
+.quick-link ul a,
+.quick-link ul a:visited,
+.quick-link ul a:active{
+  color: var(--primary-bg);
   text-decoration: none;
-}
-.quick-link ul a:visited{
-  color: inherit;
 }
 
 .contact-info {
