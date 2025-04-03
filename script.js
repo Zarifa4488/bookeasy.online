@@ -113,30 +113,37 @@ function searchRestaurant(){
   let selectedLocation = document.querySelector("#locationDropdown .selected-text").textContent;
   if(selectedLocation === "Select Location") selectedLocation = "";
 
-
   let selectedCategory = document.querySelector("#categoryDropdown .selected-text").textContent;
   if(selectedCategory === "Select Category") selectedCategory = "";
 
   let keyword = document.querySelector("#inputKeyword").value.trim().toLowerCase(); 
 
+  let titleText = "Looking for something else? Try another search.";
+
+  if (!selectedLocation && !selectedCategory && !keyword) {
+    titleText = "Showing all restaurants. Use the filters to refine your search.";
+  }
+
   let filterRestaurants = restaurants.filter(restaurant => {
     let matchesLocation = selectedLocation ? restaurant.area === selectedLocation : true;
     let matchesCategory = selectedCategory ? restaurant.category === selectedCategory : true;
     let matchesKeyword = keyword 
-    ? (restaurant.name.toLowerCase().includes(keyword)||
-       restaurant.category.toLowerCase().includes(keyword)||
-       restaurant.area.toLowerCase().includes(keyword)) 
-       : true;
+      ? (restaurant.name.toLowerCase().includes(keyword) ||
+         restaurant.category.toLowerCase().includes(keyword) ||
+         restaurant.area.toLowerCase().includes(keyword)) 
+      : true;
+
     return matchesLocation && matchesCategory && matchesKeyword;
   });
-  updateRestaurantDisplay(filterRestaurants);
+
+  updateRestaurantDisplay(filterRestaurants, titleText);
 }
 
 document.querySelector("#searchBtn").addEventListener("click",searchRestaurant);
   
 
 
-function updateRestaurantDisplay(filterRestaurants){
+function updateRestaurantDisplay(filterRestaurants, titleText = "Looking for something else? Try another search."){
   let searchResultsContainer = document.querySelector("#searchResultsContainer");
   let otherContainers = document.querySelectorAll("#scrollContainer,#recentPosts");
   let container = document.querySelector("#searchResults");
@@ -145,6 +152,7 @@ function updateRestaurantDisplay(filterRestaurants){
   let inputFields = document.querySelectorAll(".dropdown-header,.input-field");
   let lists = document.querySelectorAll(".dropdown-list");
   let resultsHeader = document.querySelector("#resultsHeader");
+  let searchTitle = document.querySelector(".search-title");
   container.innerHTML = "";
 
   if (filterRestaurants.length === 0){
@@ -170,6 +178,12 @@ function updateRestaurantDisplay(filterRestaurants){
   });
 
   searchContainer.classList.add("searchMode");
+  if (searchTitle) {
+    searchTitle.innerText = titleText;
+  }
+
+
+  
 
 
   filterRestaurants.forEach(restaurant => {
