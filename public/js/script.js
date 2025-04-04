@@ -1,17 +1,17 @@
 // This is my restaurant's information. I will replace it with a database once I finish studying the backend.
 const restaurants = [
-  { name: "Shima", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "ESquISSE", area: "Shibuya, Tokyo", category: "Ramen", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Tenyu", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
-  { name: "Kuma 3", area: "Sapporo, Hokkaido", category: "Yakitori", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "Torizen", area: "Ginza, Tokyo", category: "Okonomiyaki", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Fucha Bon", area: "Osaka, Kansai", category: "Tempura", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
-  { name: "Tomidokoro", area: "Sapporo, Hokkaido", category: "Seafood", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "Sushi Shigeru", area: "Shibuya, Tokyo", category: "Sushi", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Sushi Dokoro", area: "Osaka, Kansai", category: "Sushi", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
-  { name: "ishibashi", area: "Sapporo, Hokkaido", category: "Yakitori", image: "img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "Sushi Kuni", area: "Ginza, Tokyo", category: "Sushi", image: "img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Imari", area: "Osaka, Kansai", category: "Tempura", image: "img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" }
+  { name: "Shima", area: "Sapporo, Hokkaido", category: "Seafood", image: "images/img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
+  { name: "ESquISSE", area: "Shibuya, Tokyo", category: "Ramen", image: "images/img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
+  { name: "Tenyu", area: "Osaka, Kansai", category: "Sushi", image: "images/img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
+  { name: "Kuma 3", area: "Sapporo, Hokkaido", category: "Yakitori", image: "images/img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
+  { name: "Torizen", area: "Ginza, Tokyo", category: "Okonomiyaki", image: "images/img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
+  { name: "Fucha Bon", area: "Osaka, Kansai", category: "Tempura", image: "images/img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
+  { name: "Tomidokoro", area: "Sapporo, Hokkaido", category: "Seafood", image: "images/img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
+  { name: "Sushi Shigeru", area: "Shibuya, Tokyo", category: "Sushi", image: "images/img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
+  { name: "Sushi Dokoro", area: "Osaka, Kansai", category: "Sushi", image: "images/img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
+  { name: "ishibashi", area: "Sapporo, Hokkaido", category: "Yakitori", image: "images/img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
+  { name: "Sushi Kuni", area: "Ginza, Tokyo", category: "Sushi", image: "images/img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
+  { name: "Imari", area: "Osaka, Kansai", category: "Tempura", image: "images/img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" }
 ];
 
 function getUniqueValues(array, key) {
