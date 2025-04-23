@@ -1,177 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="BookEasy.online helps travelers book restaurants in Japan with ease. We offer multilingual support, top dining picks, and a stress-free experience."
-    />
+<% title = 'Home | bookeasy.online' %>
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
-
-    <title>bookeasy.online</title>
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="/styles/normalize.css" />
-    <link rel="stylesheet" href="/styles/style.css" />
-
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&family=Noto+Serif+JP:wght@400;700&family=Quicksand:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Icons -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-    />
-  </head>
-  <body>
-    <div class="grid-container" id="gridContainer">
-      <%-include('partials/navbar')%>
-      <!-- View All Container (Initially Hidden) -->
-      <div id="viewAllContainer" class="view-all-container">
-        <h2 class="allRestaurantsTitle">All Restaurants</h2>
-        <div id="allRestaurants" class="all-restaurants"></div>
-        <button id="showLessBtn">Show Less</button>
-      </div>
-
-      <!-- More Container (Initially Hidden) -->
-      <div id="moreContainer" class="more-container">
-        <h2 class="allPostsText">All Posts</h2>
-        <div id="allPosts" class="all-posts"></div>
-        <button id="lessBtn">Less</button>
-      </div>
-      <!-- Search Container -->
-      <div id="searchContainer" class="search-container">
-        <h2 class="search-title">
-          Looking for Something Delicious? Start Here!
-        </h2>
-        <div class="search-widget">
-          <!-- Custom Dropdown for Area -->
-          <div class="custom-dropdown" id="locationDropdown">
-            <div class="dropdown-header" tabindex="0">
-              <div class="header-wrapper" id="headerWrapper">
-                <span class="selected-text">Select Location</span>
-                <span class="arrow">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
-                    fill="#5f6368"
-                  >
-                    <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                    <path
-                      d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <span class="clear-btn">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 384 512"
-                  fill="#5f6368"
-                >
-                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                  <path
-                    d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
-                  />
-                </svg>
-              </span>
-            </div>
-            <ul class="dropdown-list"></ul>
-          </div>
-          <!-- Custom Dropdown for Category -->
-          <div class="custom-dropdown" id="categoryDropdown">
-            <div class="dropdown-header" tabindex="0">
-              <div class="header-wrapper" id="headerWrapper">
-                <span class="selected-text">Select Category</span>
-                <span class="arrow">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
-                    fill="#5f6368"
-                  >
-                    <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                    <path
-                      d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <span class="clear-btn">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 384 512"
-                  fill="#5f6368"
-                >
-                  <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-                  <path
-                    d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
-                  />
-                </svg>
-              </span>
-            </div>
-            <ul class="dropdown-list"></ul>
-          </div>
-
-          <div class="keyword-input-container" id="keywordInputContainer">
-            <div class="input-field" id="inputField">
-              <input
-                type="text"
-                class="keyword-input"
-                id="inputKeyword"
-                placeholder="Type a keyword..."
+<!-- Search Container -->
+<section
+  id="searchContainer"
+  class="search-container"
+  aria-label="Search Restaurants"
+  style="grid-area: search"
+>
+  <h2 class="search-title">Looking for Something Delicious? Start Here!</h2>
+  <div class="search-widget">
+    <!-- Location Dropdown -->
+    <div class="custom-dropdown" id="locationDropdown">
+      <div class="dropdown-header" tabindex="0">
+        <div class="header-wrapper">
+          <span class="selected-text">Select Location</span>
+          <span class="arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#5f6368">
+              <path
+                d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
               />
-            </div>
-            <ul class="keyword-dropdown" id="keywordDropdown"></ul>
-          </div>
-
-          <button id="searchBtn">Search</button>
+            </svg>
+          </span>
         </div>
+        <span class="clear-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="#5f6368">
+            <path
+              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+            />
+          </svg>
+        </span>
       </div>
-
-      <!-- Recently Viewed Restaurants -->
-      <section id="scrollContainer" class="scroll-container">
-        <div class="scroll-container-top">
-          <h2>Recently Viewed Restaurants</h2>
-          <button id="viewAllBtn">View All</button>
-        </div>
-        <!-- <div class="scroll-container-bottom"> -->
-        <button id="prevBtn">&lt;</button>
-        <div class="restaurant-cards" id="restaurantCards"></div>
-        <button id="nextBtn">&gt;</button>
-        <!-- </div> -->
-      </section>
-      <!-- Search Results -->
-      <section id="searchResultsContainer" class="search-results-container">
-        <h2 id="resultsHeader"></h2>
-        <div id="searchResults" class="search-results"></div>
-      </section>
-
-      <!-- Recent-postss section -->
-
-      <section id="recentPosts" class="recent-posts">
-        <h2>Recent Posts</h2>
-        <div class="post-cards" id="postCardsContainer"></div>
-        <button class="more-btn">More</button>
-      </section>
-
-      <div class="restaurant-suggestion">
-        <p class="suggest-text">
-          Favorite restaurant not yet on bookeasy.online?&nbsp;
-          <a href="#suggest" class="suggest-btn">Suggest a restaurant.</a>
-        </p>
-      </div>
-      <%- include('partials/footer') %>
+      <ul class="dropdown-list"></ul>
     </div>
-    <script src="/js/script.js" defer></script>
-  </body>
-</html>
+
+    <!-- Category Dropdown -->
+    <div class="custom-dropdown" id="categoryDropdown">
+      <div class="dropdown-header" tabindex="0">
+        <div class="header-wrapper">
+          <span class="selected-text">Select Category</span>
+          <span class="arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#5f6368">
+              <path
+                d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+              />
+            </svg>
+          </span>
+        </div>
+        <span class="clear-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="#5f6368">
+            <path
+              d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+            />
+          </svg>
+        </span>
+      </div>
+      <ul class="dropdown-list"></ul>
+    </div>
+
+    <!-- Keyword Search -->
+    <div class="keyword-input-container" id="keywordInputContainer">
+      <div class="input-field">
+        <input
+          type="text"
+          class="keyword-input"
+          id="inputKeyword"
+          placeholder="Type a keyword..."
+        />
+      </div>
+      <ul class="keyword-dropdown" id="keywordDropdown"></ul>
+    </div>
+
+    <button id="searchBtn">Search</button>
+  </div>
+</section>
+
+<!-- Recently Viewed -->
+<section
+  id="scrollContainer"
+  class="scroll-container"
+  aria-label="Recently Viewed Restaurants"
+  style="grid-area: restaurant-scroll"
+>
+  <div class="scroll-container-top">
+    <h2>Recently Viewed Restaurants</h2>
+    <button><a href="/restaurants" class="view-all-btn">View All</a></button>
+  </div>
+  <button id="prevBtn">&lt;</button>
+  <div class="restaurant-cards" id="restaurantCards"></div>
+  <button id="nextBtn">&gt;</button>
+</section>
+
+<script src="/js/highlight.js" defer></script>
+<script src="/js/script.js" defer></script>
+<%- include('partials/cta-restaurant-suggestion') %>

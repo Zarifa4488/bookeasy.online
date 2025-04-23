@@ -1,0 +1,4 @@
+:root {
+  --content-max-width: min(90%, 1400px);
+  --sidebar-width: 200px;
+}

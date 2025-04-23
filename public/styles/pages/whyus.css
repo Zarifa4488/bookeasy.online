@@ -1,0 +1,115 @@
+.why-us,
+.how-it-started,
+.our-team {
+  max-width: var(--content-max-width);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-xl) var(--space-m);
+  gap: var(--space-xl);
+}
+
+.why-us .content-wrapper,
+.how-it-started .content-wrapper,
+.our-team .content-wrapper {
+  flex: 1;
+  width: 100%;
+}
+
+.why-us .text-container,
+.how-it-started .text-container,
+.our-team .text-container {
+  flex: 1;
+  width: 100%;
+}
+
+.image-wrapper {
+  width: 520px;
+  max-width: 520px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+.why-us h1,
+.how-it-started h1,
+.our-team h1 {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: var(--font-xl);
+  color: var(--highlight-color);
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: var(--space-m);
+}
+
+.whyus-tagline {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: var(--font-m);
+  font-style: italic;
+  line-height: 1.8;
+  color: var(--primary-color);
+  margin-bottom: var(--space-l);
+  display: block;
+}
+
+.how-it-started p,
+.our-team p {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: var(--font-m);
+  color: var(--primary-color);
+  margin-bottom: var(--space-s);
+  line-height: 1.8;
+}
+
+.why-us ul,
+.how-it-started ul,
+.our-team ul {
+  font-family: 'Fredoka One', sans-serif;
+  list-style: none;
+  margin-bottom: var(--space-l);
+}
+
+.why-us ul li,
+.how-it-started ul li {
+  font-family: 'Fredoka One', sans-serif;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: var(--space-m);
+}
+
+.why-us-points {
+  width: 100%;
+}
+
+.why-us-points li {
+  color: var(--charcoal-black);
+  font-size: var(--font-m);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 1.8;
+}
+
+.check-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: var(--space-xs);
+  vertical-align: middle;
+  font-weight: bolder;
+}
+
+.how-it-started {
+  flex-direction: row-reverse;
+}
+
+.how-it-started ul li {
+  margin-bottom: var(--space-m);
+  color: var(--secondary-color);
+  font-family: 'Fredoka One', sans-serif;
+}

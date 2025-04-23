@@ -1,443 +1,269 @@
-// This is my restaurant's information. I will replace it with a database once I finish studying the backend.
+// === DATA ===
 const restaurants = [
-  { name: "Shima", area: "Sapporo, Hokkaido", category: "Seafood", image: "images/img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "ESquISSE", area: "Shibuya, Tokyo", category: "Ramen", image: "images/img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Tenyu", area: "Osaka, Kansai", category: "Sushi", image: "images/img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
-  { name: "Kuma 3", area: "Sapporo, Hokkaido", category: "Yakitori", image: "images/img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "Torizen", area: "Ginza, Tokyo", category: "Okonomiyaki", image: "images/img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Fucha Bon", area: "Osaka, Kansai", category: "Tempura", image: "images/img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
-  { name: "Tomidokoro", area: "Sapporo, Hokkaido", category: "Seafood", image: "images/img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "Sushi Shigeru", area: "Shibuya, Tokyo", category: "Sushi", image: "images/img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Sushi Dokoro", area: "Osaka, Kansai", category: "Sushi", image: "images/img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" },
-  { name: "ishibashi", area: "Sapporo, Hokkaido", category: "Yakitori", image: "images/img.img/image1.jpg", approxPrice: "¥3,000 - ¥5,000" },
-  { name: "Sushi Kuni", area: "Ginza, Tokyo", category: "Sushi", image: "images/img.img/image2.jpg", approxPrice: "¥1,000 - ¥1,500" },
-  { name: "Imari", area: "Osaka, Kansai", category: "Tempura", image: "images/img.img/image3.jpg", approxPrice: "¥5,000 - ¥7,000" }
+  {
+    name: 'Shima',
+    area: 'Sapporo, Hokkaido',
+    category: 'Seafood',
+    image: 'images/home/image1.jpg'
+  },
+  {
+    name: 'ESquISSE',
+    area: 'Shibuya, Tokyo',
+    category: 'Ramen',
+    image: 'images/home/image2.jpg'
+  },
+  {
+    name: 'Tenyu',
+    area: 'Osaka, Kansai',
+    category: 'Sushi',
+    image: 'images/home/image3.jpg'
+  },
+  {
+    name: 'Kuma 3',
+    area: 'Sapporo, Hokkaido',
+    category: 'Yakitori',
+    image: 'images/home/image1.jpg'
+  },
+  {
+    name: 'Torizen',
+    area: 'Ginza, Tokyo',
+    category: 'Okonomiyaki',
+    image: 'images/home/image2.jpg'
+  },
+  {
+    name: 'Fucha Bon',
+    area: 'Osaka, Kansai',
+    category: 'Tempura',
+    image: 'images/home/image3.jpg'
+  },
+  {
+    name: 'Tomidokoro',
+    area: 'Sapporo, Hokkaido',
+    category: 'Seafood',
+    image: 'images/home/image1.jpg'
+  },
+  {
+    name: 'Sushi Shigeru',
+    area: 'Shibuya, Tokyo',
+    category: 'Sushi',
+    image: 'images/home/image2.jpg'
+  },
+  {
+    name: 'Sushi Dokoro',
+    area: 'Osaka, Kansai',
+    category: 'Sushi',
+    image: 'images/home/image3.jpg'
+  },
+  {
+    name: 'ishibashi',
+    area: 'Sapporo, Hokkaido',
+    category: 'Yakitori',
+    image: 'images/home/image1.jpg'
+  },
+  {
+    name: 'Sushi Kuni',
+    area: 'Ginza, Tokyo',
+    category: 'Sushi',
+    image: 'images/home/image2.jpg'
+  },
+  {
+    name: 'Imari',
+    area: 'Osaka, Kansai',
+    category: 'Tempura',
+    image: 'images/home/image3.jpg'
+  }
 ];
 
+// === UTILS ===
 function getUniqueValues(array, key) {
-  return [...new Set(array.map(object => object[key]))];
+  return [...new Set(array.map((obj) => obj[key]))];
 }
 
-const uniqueLocations = getUniqueValues(restaurants, "area");
-const uniqueCategories = getUniqueValues(restaurants, "category");
-
-
-// Got unique values from restaurants array and saved them to uniqueLocations and uniqueCategories.
-
-
-
+// === DROPDOWNS ===
 function populateDropdown(dropdownId, values) {
   const dropdown = document.querySelector(`#${dropdownId} .dropdown-list`);
-  dropdown.innerHTML = ""; 
+  if (!dropdown) return;
 
-  dropdown.style.maxHeight = "120px";
-  dropdown.style.overflowY = "auto";
+  dropdown.innerHTML = '';
+  dropdown.style.maxHeight = '86px';
+  dropdown.style.overflowY = 'auto';
 
-  values.forEach(value => {
-    const li = document.createElement("li");
+  values.forEach((value) => {
+    const li = document.createElement('li');
     li.textContent = value;
     li.dataset.value = value;
-
     dropdown.appendChild(li);
   });
 }
-    populateDropdown("locationDropdown", uniqueLocations);
-    populateDropdown("categoryDropdown", uniqueCategories);
 
-
-    document.querySelectorAll(".custom-dropdown").forEach(dropdown =>{
-      dropdown.addEventListener("click",function(){
-        this.classList.toggle("active");
-      });
+function initializeDropdowns() {
+  document.querySelectorAll('.custom-dropdown').forEach((dropdown) => {
+    dropdown.addEventListener('click', function () {
+      this.classList.toggle('active');
     });
-
-    document.addEventListener("click",function(event){
-      document.querySelectorAll(".custom-dropdown").forEach(dropdown => {
-        if(!dropdown.contains(event.target)){
-          dropdown.classList.remove("active");
-        }
-      });
-    });
-
-      function selectValue(event){
-        if(event.target.tagName === "LI"){
-          const dropdown = event.target.closest(".custom-dropdown");
-
-          if(dropdown){
-            const selectedText = dropdown.querySelector(".selected-text");
-            const clearBtn = dropdown.querySelector(".clear-btn");
-            const arrow = dropdown.querySelector(".arrow");
-
-            selectedText.textContent = event.target.textContent;
-            selectedText.style.fontStyle = "normal";
-
-            dropdown.classList.add("selected");
-
-            clearBtn.style.display = "block";
-            arrow.style.display = "none";
-          }
-        }
-      }
-
-
-      function clearValue(event){
-        const dropdown = event.target.closest(".custom-dropdown");
-
-        if(dropdown){
-          const selectedText = dropdown.querySelector(".selected-text");
-          const clearBtn = dropdown.querySelector(".clear-btn");
-          const arrow = dropdown.querySelector(".arrow");
-
-
-          selectedText.textContent =
-          dropdown.id === "locationDropdown" ? "Select Location" : "Select Category";
-          selectedText.style.fontStyle = "italic";
-
-          dropdown.classList.remove("selected");
-          arrow.style.display = "block";
-          clearBtn.style.display = "none";
-        }
-      }
-  
-      document.querySelectorAll(".custom-dropdown .dropdown-list").forEach(dropdownList =>{
-        dropdownList.addEventListener("click",selectValue);
-      });
-
-      document.querySelectorAll(".custom-dropdown .clear-btn").forEach(clearBtn =>{
-        clearBtn.addEventListener("click",clearValue);
-      });
-  
-
-// Search button functionality
-function searchRestaurant(){
-  let selectedLocation = document.querySelector("#locationDropdown .selected-text").textContent;
-  if(selectedLocation === "Select Location") selectedLocation = "";
-
-  let selectedCategory = document.querySelector("#categoryDropdown .selected-text").textContent;
-  if(selectedCategory === "Select Category") selectedCategory = "";
-
-  let keyword = document.querySelector("#inputKeyword").value.trim().toLowerCase(); 
-
-  let titleText = "Looking for something else? Try another search.";
-
-  if (!selectedLocation && !selectedCategory && !keyword) {
-    titleText = "Showing all restaurants. Use the filters to refine your search.";
-  }
-
-  let filterRestaurants = restaurants.filter(restaurant => {
-    let matchesLocation = selectedLocation ? restaurant.area === selectedLocation : true;
-    let matchesCategory = selectedCategory ? restaurant.category === selectedCategory : true;
-    let matchesKeyword = keyword 
-      ? (restaurant.name.toLowerCase().includes(keyword) ||
-         restaurant.category.toLowerCase().includes(keyword) ||
-         restaurant.area.toLowerCase().includes(keyword)) 
-      : true;
-
-    return matchesLocation && matchesCategory && matchesKeyword;
   });
 
-  updateRestaurantDisplay(filterRestaurants, titleText);
+  document.addEventListener('click', (event) => {
+    document.querySelectorAll('.custom-dropdown').forEach((dropdown) => {
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('active');
+      }
+    });
+  });
+
+  document.querySelectorAll('.custom-dropdown .dropdown-list').forEach((list) => {
+    list.addEventListener('click', (event) => {
+      if (event.target.tagName === 'LI') {
+        const dropdown = event.target.closest('.custom-dropdown');
+        const selectedText = dropdown.querySelector('.selected-text');
+        const clearBtn = dropdown.querySelector('.clear-btn');
+        const arrow = dropdown.querySelector('.arrow');
+
+        selectedText.textContent = event.target.textContent;
+        selectedText.style.fontStyle = 'normal';
+        dropdown.classList.add('selected');
+
+        clearBtn.style.display = 'block';
+        arrow.style.display = 'none';
+      }
+    });
+  });
+
+  document.querySelectorAll('.custom-dropdown .clear-btn').forEach((clearBtn) => {
+    clearBtn.addEventListener('click', (event) => {
+      const dropdown = event.target.closest('.custom-dropdown');
+      const selectedText = dropdown.querySelector('.selected-text');
+      const arrow = dropdown.querySelector('.arrow');
+
+      selectedText.textContent =
+        dropdown.id === 'locationDropdown' ? 'Select Location' : 'Select Category';
+      selectedText.style.fontStyle = 'italic';
+
+      dropdown.classList.remove('selected');
+      arrow.style.display = 'block';
+      event.target.style.display = 'none';
+    });
+  });
 }
 
-document.querySelector("#searchBtn").addEventListener("click",searchRestaurant);
-  
+// === RENDER DISPLAY ===
+function updateRestaurantDisplay(filtered, titleText = '') {
+  const resultsContainer = document.querySelector('#searchResults');
+  const allContainer = document.querySelector('#allRestaurants');
+  const resultsHeader = document.querySelector('#resultsHeader');
+  const cardsWrapper = resultsContainer.querySelector('.results-cards');
+  const searchTitle = document.querySelector('.search-title');
 
+  if (!resultsContainer) return;
 
-function updateRestaurantDisplay(filterRestaurants, titleText = "Looking for something else? Try another search."){
-  let searchResultsContainer = document.querySelector("#searchResultsContainer");
-  let otherContainers = document.querySelectorAll("#scrollContainer,#recentPosts");
-  let container = document.querySelector("#searchResults");
-  let slogan = document.querySelector(".slogan");
-  let searchContainer = document.querySelector(".search-container");
-  let inputFields = document.querySelectorAll(".dropdown-header,.input-field");
-  let lists = document.querySelectorAll(".dropdown-list");
-  let resultsHeader = document.querySelector("#resultsHeader");
-  let searchTitle = document.querySelector(".search-title");
-  container.innerHTML = "";
+  // Hide the default container
+  if (allContainer) allContainer.style.display = 'none';
 
-  if (filterRestaurants.length === 0){
-    container.innerHTML = `<p id = "noResults">No matching restaurants found.<p>`;
+  // Show search results container
+  resultsContainer.style.display = 'flex';
+  cardsWrapper.innerHTML = `<h3 id="resultsHeader"></h3>`; // reset header
+  const header = resultsContainer.querySelector('#resultsHeader');
+
+  if (filtered.length === 0) {
+    resultsContainer.innerHTML += `<p id="noResults">No matching restaurants found.</p>`;
     return;
-  }else{
-    let count = filterRestaurants.length;
-    resultsHeader.textContent = count === 1 ? "1 restaurant found" : `${count} restaurants found`;
   }
 
-  if(slogan){
-    slogan.classList.add("searchMode");
+  if (header) {
+    header.textContent =
+      filtered.length === 1 ? '1 restaurant found' : `${filtered.length} restaurants found`;
   }
 
-  inputFields.forEach(field => field.classList.remove("searchMode"));
-  lists.forEach(list => list.classList.remove("searchMode"));
+  if (searchTitle && titleText) searchTitle.textContent = titleText;
 
-  inputFields.forEach(fields =>{
-    fields.classList.add("searchMode");
-  });
-  lists.forEach(list => {
-    list.classList.add("searchMode");
-  });
-
-  searchContainer.classList.add("searchMode");
-  if (searchTitle) {
-    searchTitle.innerText = titleText;
-  }
-
-
-  
-
-
-  filterRestaurants.forEach(restaurant => {
-    let card = document.createElement("div");
-    card.classList.add ("card");
-    card.innerHTML = `
-    <img src="${restaurant.image}" alt="${restaurant.name}" />
-              <h3>${restaurant.name}</h3>
-              <p class="area"><span class="material-symbols-outlined">location_on</span> ${restaurant.area}</p>
-              <p class="category"><span class="material-symbols-outlined">restaurant</span> ${restaurant.category}</p>
-              <p class="price">${restaurant.approxPrice}</p>
-    `;
-    container.appendChild(card);
-  });
-  otherContainers.forEach(container => {
-    container.style.display = "none";
-  });
-  searchResultsContainer.style.display = "grid";
-}
-
-
-// Recently viewed restaurants functionality
-const restaurantContainer = document.querySelector("#restaurantCards");
-const prevBtn = document.querySelector("#prevBtn");
-const nextBtn = document.querySelector("#nextBtn");
-
-const cardWidth = 300; 
-const gap = 20; 
-const cardsToScroll = 3;
-const scrollAmount = (cardWidth + gap) * cardsToScroll; 
-
-function renderRestaurants(targetContainer) {
-  targetContainer.innerHTML = "";
-
-  restaurants.forEach((restaurant) => {
-    const card = document.createElement("div");
-    card.classList.add("card");
-
+  filtered.forEach((restaurant) => {
+    const card = document.createElement('div');
+    card.classList.add('card');
     card.innerHTML = `
       <img src="${restaurant.image}" alt="${restaurant.name}" />
       <h3>${restaurant.name}</h3>
-      <p class="area">
-        <span class="material-symbols-outlined">location_on</span>
-        <a href="#" class="same-area">${restaurant.area}</a>
-      </p>
-      <p class="category">
-        <span class="material-symbols-outlined">restaurant</span>
-        <a href="#" class="same-category">${restaurant.category}</a>
-      </p>
-      <p class="price">${restaurant.approxPrice}</p>
+      <p class="area"><span class="material-symbols-outlined">location_on</span> ${restaurant.area}</p>
+      <p class="category"><span class="material-symbols-outlined">restaurant</span> ${restaurant.category}</p>
     `;
-    targetContainer.appendChild(card);
+    cardsWrapper.appendChild(card);
   });
 }
 
-renderRestaurants(restaurantContainer);
+// === SEARCH FROM URL PARAMS ===
+function searchRestaurantFromParams() {
+  const params = new URLSearchParams(window.location.search);
+  const location = params.get('location') || '';
+  const category = params.get('category') || '';
+  const keyword = (params.get('keyword') || '').toLowerCase();
 
-nextBtn.addEventListener("click", () => {
-  restaurantContainer.scrollBy({
-    left: scrollAmount,
-    behavior: "smooth",
+  const filtered = restaurants.filter((r) => {
+    const matchLocation = location ? r.area === location : true;
+    const matchCategory = category ? r.category === category : true;
+    const matchKeyword = keyword
+      ? r.name.toLowerCase().includes(keyword) ||
+        r.category.toLowerCase().includes(keyword) ||
+        r.area.toLowerCase().includes(keyword)
+      : true;
+
+    return matchLocation && matchCategory && matchKeyword;
   });
-});
 
-prevBtn.addEventListener("click", () => {
-  restaurantContainer.scrollBy({
-    left: -scrollAmount,
-    behavior: "smooth",
-  });
-});
-
-// View All Functionality
-const viewAllContainer = document.querySelector("#viewAllContainer");
-const allRestaurantsContainer = document.querySelector("#allRestaurants");
-const otherContainers = document.querySelectorAll("#workingHours,#searchContainer,#scrollContainer,#recentPosts");
-const viewAllBtn = document.querySelector("#viewAllBtn");
-const showLessBtn = document.querySelector("#showLessBtn");
-
-viewAllContainer.classList.add("hidden");
-showLessBtn.classList.add("hidden");
-
-viewAllBtn.addEventListener("click", () => {
-  if (viewAllContainer.classList.contains("hidden")) {
-    viewAllContainer.classList.remove("hidden");
-    viewAllContainer.classList.add("show");
-
-    showLessBtn.classList.remove("hidden");
-
-    otherContainers.forEach(container => {
-      container.classList.add("hidden");
-    });
-
-    renderRestaurants(allRestaurantsContainer);
-  } else {
-    viewAllContainer.classList.add("hidden");
-    viewAllContainer.classList.remove("show");
-
-    showLessBtn.classList.add("hidden");
-
-    otherContainers.forEach(container => {
-      container.classList.remove("hidden");
-    });
-  }
-});
-
-showLessBtn.addEventListener("click", () => {
-  viewAllContainer.classList.add("hidden");
-  viewAllContainer.classList.remove("show");
-
-  otherContainers.forEach(container => {
-    container.classList.remove("hidden");
-  });
-});
-
-// Posts functionality
-const posts = [
-  {
-    title: "Top 5 Sushi Spots in Tokyo",
-    description:"Explore Tokyo’s best-kept sushi secrets, from hidden gems to local favorites.",
-    date: "Mar 28, 2025",
-    authorInitials: "ZS",
-    nickname:"Zara",
-    views:23,
-  },
-  {
-    title: "How to Book a Restaurant Without Japanese",
-    description:"From creamy parfaits to fluffy cakes—don’t miss these Kyoto matcha treats.",
-    date: "Mar 27, 2025",
-    authorInitials: "ZA",
-    nickname:"Fuyu",
-    views: 83,
-  },
-  {
-    title: "5 Must-Try Matcha Desserts",
-    description:"Explore A step-by-step guide for foreigners to book restaurants stress-free in Japan.",
-    date: "Mar 26, 2025",
-    authorInitials: "MK",
-    nickname:"Kaitotto",
-    views: 77,
-  },
-  {
-    title: "Top 5 Sushi Spots in Tokyo",
-    description:"Explore Tokyo’s best-kept sushi secrets, from hidden gems to local favorites.",
-    date: "Mar 28, 2025",
-    authorInitials: "ZS",
-    nickname:"Zara",
-    views:23,
-  },
-  {
-    title: "How to Book a Restaurant Without Japanese",
-    description:"From creamy parfaits to fluffy cakes—don’t miss these Kyoto matcha treats.",
-    date: "Mar 27, 2025",
-    authorInitials: "ZA",
-    nickname:"Fuyu",
-    views: 83,
-  },
-  {
-    title: "5 Must-Try Matcha Desserts",
-    description:"Explore A step-by-step guide for foreigners to book restaurants stress-free in Japan.",
-    date: "Mar 26, 2025",
-    authorInitials: "MK",
-    nickname:"Kaitotto",
-    views: 77,
-  }
-];
-
-
-const moreContainer = document.querySelector("#moreContainer");
-const postCardsContainer = document.querySelector("#postCardsContainer"); 
-const moreBtn = document.querySelector(".more-btn");
-const lessBtn = document.querySelector("#lessBtn");
-
-
-function renderPosts(container, count = posts.length) {
-  const postContainer = container.id==="postCardsContainer" ? container:container.querySelector("#allPosts");
-
-postContainer.innerHTML = "";
-
-  posts.slice(0,count).forEach(post => {
-    const postCard = document.createElement("div");
-    postCard.classList.add("post-card");
-
-    postCard.innerHTML = `
-    <div class="post-header">
-    <div class="avatar-circle">
-      <span class="initials">${post.authorInitials || "?"}</span>
-    </div>
-    <div class="nickname-date">
-    <span class="nickname">${post.nickname || "?"}</span>
-    <span class="post-date">${post.date || ""}</span>
-    </div>
-    </div>
-      <div class="post-body">
-    <h3 class="post-title">${post.title}</h3>
-    <h4 class="post-description">${post.description}</h4>
-  </div>
-  <div class="post-footer">
-  <div class="views">
-    <span class="post-views">${post.views || ""}</span>
-    <p class="views-text">views</p>
-    </div>
-  </div>
-    `;
-
-    postContainer.appendChild(postCard);
-  });
+  updateRestaurantDisplay(
+    filtered,
+    'Didn’t find what you’re looking for? Try refining your search!'
+  );
 }
-renderPosts(document.querySelector("#postCardsContainer"),3);
 
+// === INIT APP ===
+document.addEventListener('DOMContentLoaded', () => {
+  const path = window.location.pathname;
+  const isHome = path === '/';
+  const isRestaurants = path === '/restaurants';
+  const hasParams = window.location.search.length > 0;
 
+  const uniqueLocations = getUniqueValues(restaurants, 'area');
+  const uniqueCategories = getUniqueValues(restaurants, 'category');
 
-// More Button functionality
+  populateDropdown('locationDropdown', uniqueLocations);
+  populateDropdown('categoryDropdown', uniqueCategories);
+  initializeDropdowns();
 
-moreContainer.classList.add("hidden");
-moreContainer.classList.remove("show");
-
-moreBtn.addEventListener("click", () => {
-  if (moreContainer.classList.contains("hidden")) {
-    moreContainer.classList.remove("hidden");
-    moreContainer.classList.add("show");
-
-    lessBtn.classList.remove("hidden");
-    lessBtn.classList.add("show");
-
-    otherContainers.forEach(container => {
-      container.classList.add("hidden");
-    });
-
-    renderPosts(moreContainer); 
+  if (isRestaurants && hasParams) {
+    searchRestaurantFromParams();
   } else {
-    moreContainer.classList.remove("show");
-    moreContainer.classList.add("hidden");
+    const container =
+      document.querySelector('.all-restaurants-container') ||
+      document.querySelector('#restaurantCards');
 
-    lessBtn.classList.add("hidden"); 
+    if (!container) return;
 
-    otherContainers.forEach(container => {
-      console.log("came till here")
-      container.classList.remove("hidden");
+    restaurants.forEach((restaurant) => {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      card.innerHTML = `
+        <img src="${restaurant.image}" alt="${restaurant.name}" />
+        <h3>${restaurant.name}</h3>
+        <p class="area"><span class="material-symbols-outlined">location_on</span> ${restaurant.area}</p>
+        <p class="category"><span class="material-symbols-outlined">restaurant</span> ${restaurant.category}</p>
+      `;
+      container.appendChild(card);
     });
-    renderPosts(postCardsContainer,3); 
+
+    if (isRestaurants) container.classList.add('all-grid');
   }
-});
 
-lessBtn.addEventListener("click", () => {
+  // ✅ Search button → updates URL and triggers filtered render
+  document.querySelector('#searchBtn')?.addEventListener('click', () => {
+    const location = document.querySelector('#locationDropdown .selected-text').textContent;
+    const category = document.querySelector('#categoryDropdown .selected-text').textContent;
+    const keyword = document.querySelector('#inputKeyword').value.trim();
 
-  moreContainer.classList.add("hidden");
-  moreContainer.classList.remove("show");
+    const params = new URLSearchParams();
 
-  lessBtn.classList.add("hidden");
-  moreBtn.classList.remove("hidden"); 
+    if (location && location !== 'Select Location') params.set('location', location);
+    if (category && category !== 'Select Category') params.set('category', category);
+    if (keyword) params.set('keyword', keyword);
 
-
-  otherContainers.forEach(container => {
-    container.classList.remove("hidden");
+    window.location.href = `/restaurants?${params.toString()}`;
   });
-  renderPosts(postCardsContainer, 3);
 });
