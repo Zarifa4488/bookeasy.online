@@ -1,0 +1,18 @@
+:root {
+  --space3xs: 2px;
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-s: 12px;
+  --space-m: 16px;
+  --space-l: 24px;
+  --space-xl: 32px;
+  --space-2xl: 40px;
+  --space-3xl: 48px;
+  --space-4xl: 56px;
+  --space-5xl: 64px;
+  --space-6xl: 72px;
+  --space-7xl: 80px;
+  --grid-gap: var(--space-xl);
+  --header-height: 128px;
+  --footer-height: 250px;
+}

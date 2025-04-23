@@ -1,0 +1,118 @@
+.pricing,
+.policies {
+  padding: var(--space-2xl);
+}
+
+.pricing .container,
+.policies .container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  width: 100%;
+  line-height: 1.8;
+}
+
+.pricing-card,
+.policies-card {
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-l);
+  border-radius: var(--radius-m);
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--neutral-beige);
+  border-radius: var(--space-l);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-top: var(--space-xl);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-table th {
+  color: var(--highlight-color);
+  font-weight: 700;
+  background-color: var(--neutral-cream);
+  padding: var(--space-l);
+  font-size: var(--font-m);
+  text-align: left;
+  vertical-align: middle;
+  font-family: 'Fredoka One', sans-serif;
+}
+
+.pricing-table td {
+  padding: var(--space-m);
+  vertical-align: middle;
+  text-align: left;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: var(--font-m);
+  color: var(--charcoal-black);
+}
+.pricing-table td:nth-child(2) {
+  color: var(--secondary-color);
+}
+
+.included {
+  color: var(--brand-green);
+  font-weight: bold;
+}
+
+.pricing h1,
+.policies h1 {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: var(--font-xl);
+  color: var(--highlight-color);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.intro-text {
+  font-family: 'Fredoka One', sans-serif;
+  font-size: var(--font-m);
+  font-style: italic;
+  line-height: 1.8;
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: var(--space-l);
+  display: block;
+}
+
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--neutral-beige);
+  border-radius: var(--space-l);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-top: var(--space-xl);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.policy-table th {
+  color: var(--highlight-color);
+  font-weight: 700;
+  background-color: var(--neutral-cream);
+  padding: var(--space-l);
+  font-size: var(--font-m);
+  text-align: left;
+  vertical-align: middle;
+  font-family: 'Fredoka One', sans-serif;
+}
+
+.policy-table td {
+  padding: var(--space-m);
+  vertical-align: middle;
+  font-family: 'Fredoka One', sans-serif;
+  font-size: var(--font-m);
+  color: var(--charcoal-black);
+}
+.policy-table td:nth-child(2) {
+  color: var(--secondary-color);
+}
+
+.pricing-table:hover,
+.policy-table:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,44 @@
+.cta-section {
+  font-family: 'Montserrat', serif;
+  font-size: var(--font-m);
+  font-weight: bold;
+  color: var(--charcoal-black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--space-2xl) 0;
+  padding: var(--space-2xl) 0;
+  text-align: center;
+}
+
+.cta-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-l);
+}
+
+.cta-tagline {
+  margin-bottom: var(--space-xl);
+}
+
+.cta-button,
+.cta-button:visited,
+.cta-button:active {
+  font-family: 'Montserrat', serif;
+  font-size: var(--font-s);
+  font-weight: 700;
+  background-color: var(--accent-color);
+  color: var(--highlight-color);
+  padding: var(--space-s) var(--space-m);
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease-in;
+}
+
+.cta-button:hover {
+  color: var(--accent-color);
+  background-color: var(--highlight-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}

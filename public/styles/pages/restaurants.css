@@ -1,0 +1,110 @@
+body.restaurants-page .grid-container {
+  display: grid;
+  grid-template-areas:
+    'search'
+    'restaurant-list';
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap);
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search-container {
+  grid-area: search;
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-l);
+  margin-bottom: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--space-m);
+  position: relative;
+  z-index: 1;
+}
+
+.search-title {
+  padding: var(--space-l) 0;
+  margin-bottom: var(--space-l);
+  font-size: var(--font-xl);
+  font-family: 'Noto Serif JP', serif;
+  font-weight: 600;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.search-widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-m);
+  position: relative;
+  z-index: 2;
+}
+
+#searchBtn {
+  background-color: var(--highlight-color);
+  color: var(--accent-color);
+  font-family: 'Montserrat', serif;
+  font-size: var(--font-s);
+  font-weight: 700;
+  padding: var(--space-m) var(--space-2xl);
+  border: none;
+  border-radius: var(--space-l);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#searchBtn:hover {
+  background-color: var(--accent-color);
+  color: var(--highlight-color);
+  box-shadow: -4px 0 8px var(--highlight-color), 4px 0 8px var(--highlight-color);
+  transform: translateY(-2px);
+}
+
+.all-grid {
+  display: grid;
+  padding: var(--space-xl) var(--space-l);
+}
+
+.all-restaurants-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-xl);
+  padding: var(--space-xl) var(--space-l);
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  min-height: 0;
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+}
+
+#resultsHeader {
+  width: 100%;
+  text-align: center;
+}
+
+.results-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xl);
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}

@@ -1,0 +1,89 @@
+/* ===== Imports ===== */
+@import './variables/spacing.css';
+@import './variables/colors.css';
+@import './variables/fonts.css';
+@import './variables/layout.css';
+
+@import './components/navbar.css';
+@import './components/footer.css';
+@import './components/cards.css';
+@import './components/dropdowns.css';
+
+@import './pages/home.css';
+@import './pages/whyus.css';
+@import './pages/services.css';
+@import './pages/policies.css';
+@import './pages/cta-start-exploring.css';
+@import './pages/cta-restaurant-suggestion.css';
+@import './pages/restaurants.css';
+
+/* ===== Reset & Global Styles ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--primary-bg);
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Layout: Grid Container ===== */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'search'
+    'restaurant-scroll'
+    'restaurant-suggestion';
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr;
+  gap: var(--grid-gap);
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+}
+
+/* ===== Variant: Simple Page ===== */
+body.simple-page .grid-container {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-xl);
+  gap: var(--space-xl);
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ===== Variant: Home Page ===== */
+body.home-page .grid-container {
+  display: grid;
+}
+
+#restaurantCards {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  gap: var(--space-2xl);
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding-top: var(--space-m);
+  padding-bottom: var(--space-l);
+}
+
+#searchResults {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xl);
+  padding: var(--space-xl) var(--space-l);
+  white-space: normal;
+}
