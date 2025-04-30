@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
+const restaurants = require('./data/data');
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -30,7 +31,37 @@ app.get('/policies', (req, res) => {
 app.get('/restaurants', (req, res) => {
   res.render('restaurants', {
     title: 'All Restaurants | BookEasy.online',
-    pageClass: 'restaurants-page'
+    pageClass: 'simple-page'
+  });
+});
+
+app.get('/restaurant/:slug', (req, res) => {
+  const slug = req.params.slug;
+  const restaurant = restaurants.find((r) => r.slug === slug);
+
+  if (!restaurant) {
+    return res.status(404).send('Restaurant Not Found');
+  }
+
+  res.render('restaurant-detail', {
+    restaurant,
+    title: `${restaurant.name} | BookEasy.online`,
+    pageClass: 'simple-page'
+  });
+});
+
+app.get('/restaurant/:slug/reserve', (req, res) => {
+  const slug = req.params.slug;
+  const restaurant = restaurants.find((r) => r.slug === slug);
+
+  if (!restaurant) {
+    return res.status(404).send('Restaurant Not Found');
+  }
+
+  res.render('reservation-form', {
+    restaurant,
+    title: `Reserve at ${restaurant.name} | BookEasy.online`,
+    pageClass: 'simple-page'
   });
 });
 

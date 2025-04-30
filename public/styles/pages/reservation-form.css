@@ -1,0 +1,174 @@
+/* ===== Reservation Form Page ===== */
+
+.reservation-form-wrapper {
+  max-width: 700px;
+  margin: var(--space-2xl) auto;
+  padding: var(--space-2xl);
+  background-color: var(--accent-color);
+  border-radius: var(--space-m);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  font-family: 'Roboto', sans-serif;
+}
+.reservation-information,
+.customer-information {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-l);
+  margin-bottom: var(--space-xl);
+}
+
+.reservation-form-wrapper h2 {
+  text-align: center;
+  color: var(--highlight-color);
+  font-size: var(--font-2xl);
+  margin-bottom: var(--space-xl);
+  letter-spacing: 1px;
+  padding-bottom: var(--space-s);
+}
+
+.reservation-information h3,
+.customer-information h3 {
+  color: var(--primary-color);
+  font-size: var(--font-m);
+  font-weight: 700;
+  margin-bottom: var(--space-s);
+  border-bottom: 1px solid var(--highlight-color);
+  padding-bottom: var(--space-xs);
+}
+
+/* ===== Form Layout ===== */
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.form-group,
+.form-group-inline {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group-inline {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: var(--space-m);
+}
+
+label {
+  color: var(--primary-color);
+  font-size: var(--font-s);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-xs);
+}
+
+/* Inputs Styling */
+input,
+select,
+textarea {
+  color: var(--secondary-color);
+  padding: var(--space-s);
+  border: 1px solid var(--accent-color);
+  border-radius: var(--space-xs);
+  font-size: var(--font-s);
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--color-light-bg);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  filter: invert(28%) sepia(16%) saturate(380%) hue-rotate(5deg) brightness(90%) contrast(90%);
+  cursor: pointer;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--highlight-color);
+  box-shadow: 0 0 5px var(--highlight-color);
+  outline: none;
+}
+
+/* Placeholder Styling */
+::placeholder {
+  color: var(--secondary-color);
+  opacity: 0.8;
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ===== Policy Notice ===== */
+.policy-notice {
+  background-color: var(--highlight-color-light);
+  padding: var(--space-m);
+  border-left: 4px solid var(--highlight-color);
+  border-radius: var(--space-s);
+  color: var(--primary-color);
+  font-size: var(--font-xs);
+}
+
+.policy-notice h3 {
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-m);
+}
+
+/* Terms Check */
+.terms-check {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-m);
+  font-size: var(--font-xs);
+  color: var(--primary-color);
+}
+
+/* ===== Submit Button ===== */
+.submit-btn {
+  background-color: var(--highlight-color);
+  color: var(--background-white);
+  padding: var(--space-m);
+  border: none;
+  border-radius: var(--space-s);
+  font-size: var(--font-m);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: var(--primary-color);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn:disabled {
+  background-color: var(--color-light-border);
+  color: var(--secondary-color);
+  cursor: not-allowed;
+}
+
+/* ===== Custom Styled Select ===== */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: var(--color-light-bg);
+  background-image: url('/images/home/arrow-icon.png');
+  background-repeat: no-repeat;
+  background-position: right var(--space-s) center;
+  background-size: 24px;
+
+  padding: var(--space-s) var(--space-xl) var(--space-s) var(--space-s);
+  border-radius: var(--space-xs);
+  font-size: var(--font-s);
+  height: 48px;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}

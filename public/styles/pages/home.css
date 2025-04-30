@@ -88,7 +88,7 @@
 }
 
 /* View All Button */
-.scroll-container-top button {
+.view-all-btn {
   background-color: var(--primary-color);
   color: #fff;
   font-family: 'Noto Serif JP', serif;
@@ -102,21 +102,23 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.scroll-container-top button:hover {
+.view-all-btn:hover {
+  outline: none;
   background-color: var(--highlight-color);
   color: var(--accent-color);
   transform: scale(1.1);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.scroll-container-top button:focus {
+.view-all-btn:focus {
   outline: 2px solid var(--highlight-color);
   outline-offset: 2px;
 }
 
-.scroll-container-top button a {
+.view-all-btn {
+  outline: none;
   text-decoration: none;
-  color: inherit;
+  color: var(--primary-bg);
 }
 
 #prevBtn,

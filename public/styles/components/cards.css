@@ -12,6 +12,12 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .card img {
@@ -50,10 +56,4 @@
   text-decoration: none;
   color: var(--secondary-color);
   font-weight: 500;
-}
-
-.card .same-area:hover,
-.card .same-category:hover {
-  text-decoration: underline;
-  color: var(--highlight-color);
 }
