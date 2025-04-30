@@ -16,6 +16,8 @@
 @import './pages/cta-start-exploring.css';
 @import './pages/cta-restaurant-suggestion.css';
 @import './pages/restaurants.css';
+@import './pages/restaurant-detail.css';
+@import './pages/reservation-form.css';
 
 /* ===== Reset & Global Styles ===== */
 * {

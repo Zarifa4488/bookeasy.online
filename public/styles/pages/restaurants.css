@@ -108,3 +108,9 @@ body.restaurants-page .grid-container {
   max-width: var(--content-max-width);
   margin: 0 auto;
 }
+#noResults {
+  font-family: 'Montserrat', serif;
+  font-size: var(--font-s);
+  font-weight: bold;
+  color: var(--secondary-color);
+}
