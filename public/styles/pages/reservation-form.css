@@ -45,19 +45,19 @@
   gap: var(--space-2xl);
 }
 
-.form-group,
-.form-group-inline {
+.reservation-form-wrapper .form-group,
+.reservation-form-wrapper .form-group-inline {
   display: flex;
   flex-direction: column;
 }
 
-.form-group-inline {
+.reservation-form-wrapper .form-group-inline {
   flex-direction: row;
   justify-content: space-between;
   gap: var(--space-m);
 }
 
-label {
+.reservation-form-wrapper label {
   color: var(--primary-color);
   font-size: var(--font-s);
   font-weight: 600;
@@ -66,9 +66,9 @@ label {
 }
 
 /* Inputs Styling */
-input,
-select,
-textarea {
+.reservation-form-wrapper input,
+.reservation-form-wrapper select,
+.reservation-form-wrapper textarea {
   color: var(--secondary-color);
   padding: var(--space-s);
   border: 1px solid var(--accent-color);
@@ -79,28 +79,28 @@ textarea {
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input[type='date']::-webkit-calendar-picker-indicator {
+.reservation-form-wrapper input[type='date']::-webkit-calendar-picker-indicator {
   filter: invert(28%) sepia(16%) saturate(380%) hue-rotate(5deg) brightness(90%) contrast(90%);
   cursor: pointer;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+.reservation-form-wrapper input:focus,
+.reservation-form-wrapper select:focus,
+.reservation-form-wrapper textarea:focus {
   border-color: var(--highlight-color);
   box-shadow: 0 0 5px var(--highlight-color);
   outline: none;
 }
 
 /* Placeholder Styling */
-::placeholder {
+.reservation-form-wrapper ::placeholder {
   color: var(--secondary-color);
   opacity: 0.8;
 }
 
 /* Textarea */
-textarea {
-  resize: vertical;
+.reservation-form-wrapper textarea {
+  resize: none;
   min-height: 120px;
 }
 
@@ -130,7 +130,7 @@ textarea {
 }
 
 /* ===== Submit Button ===== */
-.submit-btn {
+.reservation-form-wrapper .submit-btn {
   background-color: var(--highlight-color);
   color: var(--background-white);
   padding: var(--space-m);
@@ -142,19 +142,19 @@ textarea {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.submit-btn:hover:not(:disabled) {
+.reservation-form-wrapper .submit-btn:hover:not(:disabled) {
   background-color: var(--primary-color);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-.submit-btn:disabled {
+.reservation-form-wrapper .submit-btn:disabled {
   background-color: var(--color-light-border);
   color: var(--secondary-color);
   cursor: not-allowed;
 }
 
 /* ===== Custom Styled Select ===== */
-select {
+.reservation-form-wrapper select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;

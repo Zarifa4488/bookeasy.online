@@ -18,6 +18,7 @@
 @import './pages/restaurants.css';
 @import './pages/restaurant-detail.css';
 @import './pages/reservation-form.css';
+@import './pages/suggest-a-restaurant.css';
 
 /* ===== Reset & Global Styles ===== */
 * {

@@ -182,6 +182,7 @@ function updateRestaurantDisplay(filtered, titleText = '') {
   }
 
   if (header) {
+    header.className = 'search-results-header';
     header.textContent =
       filtered.length === 1 ? '1 restaurant found' : `${filtered.length} restaurants found`;
   }
@@ -282,6 +283,28 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = `/restaurants?${params.toString()}`;
   });
 });
+
+const restaurantCards = document.getElementById('restaurantCards');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+if (restaurantCards && prevBtn && nextBtn) {
+  const scrollAmount = 300; // Adjust based on card width
+
+  prevBtn.addEventListener('click', () => {
+    restaurantCards.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    restaurantCards.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+}
 
 document.addEventListener('click', (e) => {
   const card = e.target.closest('.card');
