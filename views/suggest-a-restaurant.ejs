@@ -1,0 +1,34 @@
+<title>Suggest a Restaurant | BookEasy.online</title>
+
+<div class="suggestion-form-wrapper">
+  <h2>Suggest a Restaurant</h2>
+
+  <form action="/submit-suggestion" method="POST" class="suggestion-form">
+    <div class="form-group">
+      <label for="name">Restaurant Name</label>
+      <input type="text" id="name" name="name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="homepage">Restaurant Homepage / Instagram</label>
+      <input type="url" id="homepage" name="homepage" placeholder="https://..." />
+    </div>
+
+    <div class="form-group">
+      <label for="city">City / Area</label>
+      <input type="text" id="city" name="city" required />
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Additional Comments (Optional)</label>
+      <textarea
+        id="comment"
+        name="comment"
+        rows="4"
+        placeholder="Why do you recommend this place?"
+      ></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit Suggestion</button>
+  </form>
+</div>

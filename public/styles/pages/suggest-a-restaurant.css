@@ -1,0 +1,66 @@
+.suggestion-form-wrapper {
+  font-family: 'Roboto', sans-serif;
+  width: 400px;
+  min-width: 400px;
+  margin: auto;
+  background: var(--background-white);
+  padding: var(--space-xl);
+  border-radius: var(--space-xs);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-form-wrapper h2 {
+  text-align: center;
+  color: var(--highlight-color);
+  margin-bottom: var(--space-l);
+}
+
+.suggestion-form-wrapper .form-group {
+  margin-bottom: var(--space-l);
+}
+
+.suggestion-form-wrapper label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.suggestion-form-wrapper input[type='text'],
+.suggestion-form-wrapper input[type='url'],
+.suggestion-form-wrapper textarea {
+  width: 100%;
+  padding: var(--space-s);
+  border: 1px solid var(--accent-color);
+  border-radius: var(--space-xxs);
+  font-size: var(--font-s);
+}
+
+.suggestion-form-wrapper input[type='text']:focus,
+.suggestion-form-wrapper input[type='url']:focus,
+.suggestion-form-wrapper textarea:focus {
+  border-color: var(--highlight-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(176, 132, 1, 0.2);
+}
+
+.suggestion-form-wrapper textarea {
+  resize: none;
+}
+
+.suggestion-form-wrapper .submit-btn {
+  display: block;
+  width: 100%;
+  padding: var(--space-s);
+  background-color: var(--highlight-color);
+  color: var(--background-white);
+  border: none;
+  border-radius: var(--space-xs);
+  font-size: var(--font-s);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.suggestion-form-wrapper .submit-btn:hover {
+  background-color: var(--primary-color);
+}

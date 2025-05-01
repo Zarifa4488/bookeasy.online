@@ -35,6 +35,13 @@ app.get('/restaurants', (req, res) => {
   });
 });
 
+app.get('/suggest-a-restaurant', (req, res) => {
+  res.render('suggest-a-restaurant', {
+    title: 'Suggest a Restaurant | BookEasy.online',
+    pageClass: 'simple-page'
+  });
+});
+
 app.get('/restaurant/:slug', (req, res) => {
   const slug = req.params.slug;
   const restaurant = restaurants.find((r) => r.slug === slug);

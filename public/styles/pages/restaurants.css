@@ -110,7 +110,15 @@ body.restaurants-page .grid-container {
 }
 #noResults {
   font-family: 'Montserrat', serif;
-  font-size: var(--font-s);
-  font-weight: bold;
+  font-size: var(--font-m);
+  font-weight: 600;
+  text-align: center;
   color: var(--secondary-color);
+}
+.search-results-header {
+  font-family: 'Montserrat', serif;
+  font-size: var(--font-m);
+  font-weight: 600;
+  text-align: center;
+  color: var(--primary-color);
 }
