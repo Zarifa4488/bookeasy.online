@@ -90,3 +90,44 @@ body.home-page .grid-container {
   padding: var(--space-xl) var(--space-l);
   white-space: normal;
 }
+
+/* ============================
+   Thank You Page Styles
+============================ */
+.thank-you {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 40px;
+  text-align: center;
+  background-color: var(--background-white);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.thank-you h1 {
+  font-size: 2rem;
+  color: #2b2b2b;
+  margin-bottom: 20px;
+}
+
+.thank-you p {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.thank-you .btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: var(--highlight-color);
+  color: var(--background-white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.thank-you .btn:hover {
+  background-color: var(--primary-color);
+}

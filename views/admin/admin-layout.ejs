@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title || 'Admin | BookEasy.online' %></title>
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="/styles/admin.css" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="admin-page">
+    <div class="admin-wrapper">
+      <!-- Sidebar -->
+      <%- include('../partials/admin-sidebar') %>
+
+      <div class="admin-main-area">
+        <!-- Header -->
+        <%- include('../partials/admin-header') %>
+
+        <!-- Main Content -->
+        <main class="admin-main-content"><%- body %></main>
+      </div>
+    </div>
+
+    <!-- Optional JS -->
+    <script src="/js/admin.js" defer></script>
+  </body>
+</html>

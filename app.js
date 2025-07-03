@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const path = require('path');
 const expressLayouts = require('express-ejs-layouts');
-const Restaurant = require('./models/Restaurant'); // Mongoose model
+const Restaurant = require('./models/Restaurant');
 
 const app = express();
 
@@ -16,15 +16,17 @@ mongoose
   .then(() => console.log('✅ Connected to MongoDB Atlas'))
   .catch((err) => console.error('❌ MongoDB connection error:', err));
 
-// View engine & static files setup
+// Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+// View engine & layout setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressLayouts);
-app.set('layout', 'layout');
+app.set('layout', 'layout'); // default layout
 
-// ROUTES
-
+// Public Routes
 app.get('/', (req, res) => {
   res.render('home', { title: 'Home | BookEasy.online', pageClass: 'home-page' });
 });
@@ -103,7 +105,14 @@ app.get('/restaurant/:slug/reserve', async (req, res) => {
   }
 });
 
-// Start server
+// Admin Routes (loads views with layout: 'admin/layout')
+const adminRoutes = require('./routes/admin');
+app.use('/admin', adminRoutes);
+
+const reservationRoutes = require('./routes/reservation');
+app.use('/reservation', reservationRoutes);
+
+// Start Server
 app.listen(3000, () => {
   console.log('✅ Server is running at http://localhost:3000');
 });

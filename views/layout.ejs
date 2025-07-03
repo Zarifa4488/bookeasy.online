@@ -42,10 +42,12 @@
     <link rel="icon" type="image/png" href="/images/favicon.png" />
   </head>
 
-  <body class="<%= pageClass %>">
-    <%- include('partials/navbar') %>
+  <body class="<%= typeof pageClass !== 'undefined' ? pageClass : '' %>">
+    <% if (!pageClass || !pageClass.includes('admin-page')) { %> <%- include('partials/navbar') %>
+    <% } %>
     <main class="grid-container" id="gridContainer"><%- body %></main>
-    <%- include('partials/footer') %>
+    <% if (!pageClass || !pageClass.includes('admin-page')) { %> <%- include('partials/footer') %>
+    <% } %>
 
     <!-- JS Scripts (Optional for page-specific logic) -->
     <script src="/js/script.js" defer></script>
