@@ -1,0 +1,130 @@
+body.admin-page {
+  font-family: 'Nunito', sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+}
+
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-identity {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* spacing between icon and text */
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  line-height: 1;
+}
+
+.admin-sidebar {
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+  width: 220px;
+  flex-shrink: 0;
+}
+
+.admin-sidebar h2 {
+  margin: 0 0 20px;
+  font-size: 24px;
+}
+
+.admin-sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-sidebar li {
+  margin-bottom: 15px;
+}
+
+.admin-sidebar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.material-symbols-outlined {
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+.admin-sidebar a .label {
+  transition: text-decoration 0.2s ease;
+}
+
+.admin-sidebar a:hover .label {
+  text-decoration: underline;
+}
+
+.admin-main-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 25px;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+}
+
+.admin-main-content {
+  padding: 30px;
+}
+
+/* --- Reservation Tracker Table --- */
+
+.section-heading {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 1000px;
+}
+
+.dashboard-table thead {
+  background-color: #f0f2f5;
+  border-bottom: 2px solid #ddd;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+  color: #333;
+}
+
+.dashboard-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.dashboard-table th {
+  font-weight: 600;
+  color: #2c3e50;
+}

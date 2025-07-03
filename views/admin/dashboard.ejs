@@ -1,0 +1,42 @@
+<h2 class="section-heading">Reservation Tracker</h2>
+
+<div class="table-wrapper">
+  <table class="dashboard-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Restaurant</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Adults</th>
+        <th>Children</th>
+        <th>Customer Name</th>
+        <th>Country</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Requested At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (reservations.length === 0) { %>
+      <tr>
+        <td colspan="11" style="text-align: center">No reservations yet.</td>
+      </tr>
+      <% } else { %> <% reservations.forEach(reservation => { %>
+      <tr>
+        <td><%= reservation.reservationId || reservation._id.toString().slice(-6) %></td>
+        <td><%= reservation.restaurantName %></td>
+        <td><%= reservation.date %></td>
+        <td><%= reservation.time %></td>
+        <td><%= reservation.adults %></td>
+        <td><%= reservation.children %></td>
+        <td><%= reservation.customer.firstName %> <%= reservation.customer.lastName %></td>
+        <td><%= reservation.customer.country %></td>
+        <td><%= reservation.customer.email %></td>
+        <td><%= reservation.customer.phone %></td>
+        <td><%= new Date(reservation.createdAt).toLocaleString() %></td>
+      </tr>
+      <% }) %> <% } %>
+    </tbody>
+  </table>
+</div>
